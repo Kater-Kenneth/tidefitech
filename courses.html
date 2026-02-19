@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          },
+          colors: {
+            primary: '#f15a24',
+            darkBlue: '#0f172a',
+            darkGray: '#1e293b',
+            lightGray: '#64748b',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+            <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300 hover:text-white"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+            <a href="tel:+2349027772815" class="transition-all duration-300 hover:text-white"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses</a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform">APPLY NOW</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[300px]" 
+           style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
+      <h1 class="text-4xl font-bold">Our Courses</h1>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">Courses</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="section-title text-center mb-16 scroll-animate">
+            <p class="text-primary font-semibold tracking-widest text-sm uppercase mb-3">OUR PROGRAMS</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl text-darkBlue font-bold leading-tight mb-5">Explore Our <span class="text-primary">Tech Programs</span></h2>
+            <p class="text-lightGray max-w-2xl mx-auto text-lg">Discover industry-relevant technology courses designed to launch your career in the digital world</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 scroll-animate">
+            <button class="filter-btn active bg-primary text-white py-2 px-6 rounded-full font-medium transition-all">All Courses</button>
+            <button class="filter-btn bg-white text-darkBlue py-2 px-6 rounded-full font-medium transition-all border border-gray-200">Development</button>
+            <button class="filter-btn bg-white text-darkBlue py-2 px-6 rounded-full font-medium transition-all border border-gray-200">Data Science</button>
+            <button class="filter-btn bg-white text-darkBlue py-2 px-6 rounded-full font-medium transition-all border border-gray-200">Cybersecurity</button>
+            <button class="filter-btn bg-white text-darkBlue py-2 px-6 rounded-full font-medium transition-all border border-gray-200">Design</button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Course 1 - Web Development -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                         alt="Web Development">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Development</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="web-dev-details.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 18 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.8</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">Full Stack Web Development</h5>
+                    <p class="course-desc text-lightGray mb-6">Master front-end and back-end technologies to build responsive, modern web applications from scratch.</p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 - Data Science -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                         alt="Data Science">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Data</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 16 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.9</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">Data Science & Analytics</h5>
+                    <p class="course-desc text-lightGray mb-6">Learn to extract insights from data using Python, machine learning, and statistical analysis techniques.</p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 - Cybersecurity -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                         alt="Cybersecurity">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Security</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 14 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.7</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">Cybersecurity Fundamentals</h5>
+                    <p class="course-desc text-lightGray mb-6">Protect systems and networks from digital attacks with essential cybersecurity principles and practices.</p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 - Mobile Development -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                         alt="Mobile Development">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Mobile</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 10 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.6</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">Mobile App Development</h5>
+                    <p class="course-desc text-lightGray mb-6">Build cross-platform mobile applications using React Native and Flutter frameworks.</p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 5 - UI/UX Design -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                         alt="UI/UX Design">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Design</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="ux-detail.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 6 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.8</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">UI/UX Design Mastery</h5>
+                    <p class="course-desc text-lightGray mb-6">Learn user-centered design principles and create intuitive, beautiful digital experiences.</p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 6 - Hardware & Networking -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                        class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                        alt="Hardware and Networking">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Networking</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="hardware-detail.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 6 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.8</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">
+                        Hardware & Networking
+                    </h5>
+                    <p class="course-desc text-lightGray mb-6">
+                        Learn PC hardware, troubleshooting, and networking fundamentals to set up and maintain secure, efficient systems.
+                    </p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 7 - Graphics Design -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                        alt="Graphics Design">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Design</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="graphix-detail.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 6 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.9</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">
+                        Graphics Design
+                    </h5>
+                    <p class="course-desc text-lightGray mb-6">
+                        Master CorelDraw, Canva, and creative design principles to craft stunning visuals for digital and print media.
+                    </p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course - Computer Appreciation (Beginners) -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                        alt="Computer Appreciation">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Beginner</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="comp-app-details.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 6 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.7</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">
+                        Computer Appreciation (Beginners)
+                    </h5>
+                    <p class="course-desc text-lightGray mb-6">
+                        Introduction to computers for beginners — learn the basics of hardware, software, typing, file management, and internet usage.
+                    </p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course - Office Administration & Desktop Publishing -->
+            <div class="course-card group bg-white rounded-xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div class="course-img relative overflow-hidden">
+                    <img src="img/A Quick Guide To Digital Marketing For Newbies.jpg" 
+                        class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110" 
+                        alt="Office Administration & Desktop Publishing">
+                    <span class="course-badge bg-primary text-white text-sm font-semibold px-3 py-1 rounded-lg absolute top-4 right-4">Office</span>
+                    <div class="course-overlay absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center">
+                        <button class="bg-primary text-white py-2 px-5 rounded-full font-medium transition-transform hover:scale-110">
+                            <a href="office-admin-details.html">View Details</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-body p-6">
+                    <div class="course-meta text-lightGray text-sm mb-4 flex justify-between">
+                        <span><i class="fas fa-clock text-primary mr-1"></i> 6 Weeks</span>
+                        <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.6</span>
+                    </div>
+                    <h5 class="course-title text-xl font-bold text-darkBlue mb-3 group-hover:text-primary transition-colors duration-300">
+                        Office Administration & Desktop Publishing
+                    </h5>
+                    <p class="course-desc text-lightGray mb-6">
+                        Learn essential office tools (MS Word, Excel, PowerPoint) and desktop publishing skills for effective business communication and documentation.
+                    </p>
+                    <div class="course-footer flex justify-between items-center pt-4 border-t border-gray-100">
+                        <div class="price-tag bg-primary bg-opacity-10 text-primary font-bold px-3 py-1 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-12 scroll-animate">
+            <button class="group bg-primary text-white py-4 px-8 rounded-xl font-semibold transition-all hover:bg-[#d1491e] hover:scale-105 flex items-center mx-auto shadow-lg shadow-primary/30">
+                VIEW ALL PROGRAMS <i class="fas fa-arrow-right ml-3 transition-transform group-hover:translate-x-2"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-white px-4 md:px-[5%]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">What Our Students Say</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Hear from our graduates about their learning experience at TIDEF ITECH</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 p-8 rounded-lg scroll-animate-left">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">IC</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">Ibechi Cozby</h4>
+              <p class="text-primary text-sm">Web Development Graduate</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The Frontend Web Development course transformed my career. I went from zero coding knowledge to landing a job as a junior developer"</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 p-8 rounded-lg scroll-animate">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">JC</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">James Catherine </h4>
+              <p class="text-primary text-sm">Office Administration</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"TIDEF ITECH’s practical training equipped me with the organizational and administrative skills I use every day as an Office Administrator."</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 p-8 rounded-lg scroll-animate-right">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">AK</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">Angahar Kenneth</h4>
+              <p class="text-primary text-sm">Graphics Design</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The design program gave me hands-on creative skills I apply daily in my work. The projects were challenging but extremely valuable for real-world design experience."</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-primary text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Launch Your Tech Career?</h2>
+      <p class="text-lg mb-8">Join our next cohort and gain the skills you need to succeed in the tech industry</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform" class="bg-white text-primary py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-gray-100 hover:scale-105 text-center">
+          APPLY NOW
+        </a>
+        <a href="https://wa.me/2349027772815" class="bg-darkBlue text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-darkGray hover:scale-105 text-center" target="_blank">
+          REQUEST INFO
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <a href="tel:+2349027772815" class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</a>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <a href="mailto:tidefitech@gmail.com" class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="js/courses.js"></script>
+
+
+ <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

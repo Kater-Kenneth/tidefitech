@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Certificate Verification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          },
+          colors: {
+            primary: '#f15a24',
+            darkBlue: '#0f172a',
+            darkGray: '#1e293b',
+            lightGray: '#64748b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Custom animations and transitions */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px rgba(241, 90, 36, 0.5), 0 0 25px rgba(15, 23, 42, 0.8); }
+      50% { box-shadow: 0 0 20px rgba(241, 90, 36, 0.8), 0 0 40px rgba(15, 23, 42, 1); }
+      100% { box-shadow: 0 0 5px rgba(241, 90, 36, 0.5), 0 0 25px rgba(15, 23, 42, 0.8); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes slideInFromRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 4s ease-in-out infinite;
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .animate-slide-right {
+      animation: slideInFromRight 1s ease-out forwards;
+    }
+
+    .animate-slide-left {
+      animation: slideInFromLeft 1s ease-out forwards;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .animate-rotate {
+      animation: rotate 20s linear infinite;
+    }
+
+    /* Background animation elements */
+    .bg-shape {
+      position: absolute;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    /* Input focus effects */
+    .input-field {
+      transition: all 0.3s ease;
+      border: 2px solid #334155;
+      background-color: #1e293b;
+      color: #e2e8f0;
+    }
+
+    .input-field:focus {
+      border-color: #f15a24;
+      box-shadow: 0 0 0 3px rgba(241, 90, 36, 0.2);
+      transform: translateY(-2px);
+      background-color: #1e293b;
+    }
+
+    /* Button hover effects */
+    .verify-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .verify-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.6s ease;
+    }
+
+    .verify-btn:hover::before {
+      left: 100%;
+    }
+
+    .verify-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(241, 90, 36, 0.3);
+    }
+
+    /* Custom colors */
+    .bg-darkBlue { background-color: #0f172a; }
+    .bg-darkGray { background-color: #1e293b; }
+    .text-primary { color: #f15a24; }
+    .bg-primary { background-color: #f15a24; }
+
+    /* Floating elements */
+    .floating-icon {
+      position: absolute;
+      opacity: 0.7;
+      z-index: -1;
+    }
+
+    body {
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                  url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(30, 41, 59, 0.9);
+      text-align: left;
+      display: none;
+      border: 1px solid rgba(241, 90, 36, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #e2e8f0;
+    }
+
+    .not-found {
+      color: #ef4444;
+      margin-top: 15px;
+      display: none;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .result strong {
+      color: #f15a24;
+    }
+
+    .certificate-icon {
+      font-size: 4rem;
+      color: #f15a24;
+      margin-bottom: 20px;
+    }
+
+    /* Watermark styles */
+    .watermark {
+      position: relative;
+      overflow: hidden;
+      margin-top: 15px;
+    }
+
+    .watermark::after {
+      content: "Tidef iTech - Protected Document";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    iframe {
+      pointer-events: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* QR Scanner */
+    #reader {
+      width: 100%;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .secondary-btn {
+      background-color: #334155;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .secondary-btn:hover {
+      background-color: #475569;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+        min-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .bg-shape {
+        display: none !important;
+      }
+
+      .floating-icon {
+        display: none !important;
+      }
+
+      .max-w-md {
+        padding: 20px !important;
+        margin: 0 auto;
+      }
+
+      .certificate-icon {
+        font-size: 2.5rem !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+      }
+
+      p {
+        font-size: 0.875rem !important;
+      }
+
+      .input-field {
+        padding: 0.75rem 0.5rem 0.75rem 2rem !important;
+        font-size: 0.875rem;
+      }
+
+      button {
+        font-size: 0.875rem !important;
+        padding: 0.625rem 0.5rem !important;
+      }
+
+      .result {
+        padding: 15px !important;
+        margin-top: 15px !important;
+        font-size: 0.875rem;
+      }
+
+      .result iframe {
+        height: 250px !important;
+        margin-top: 10px;
+      }
+
+      .not-found {
+        font-size: 0.875rem;
+        padding: 12px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 8px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .max-w-md {
+        padding: 15px !important;
+      }
+
+      .certificate-icon {
+        font-size: 2rem !important;
+      }
+
+      h2 {
+        font-size: 1.25rem !important;
+      }
+
+      p {
+        font-size: 0.75rem !important;
+      }
+
+      .text-3xl {
+        font-size: 1.5rem !important;
+      }
+
+      .text-white.text-3xl {
+        font-size: 1.25rem !important;
+      }
+
+      .text-primary {
+        font-size: 1rem !important;
+      }
+
+      .input-field {
+        padding: 0.625rem 0.25rem 0.625rem 1.75rem !important;
+        font-size: 0.8125rem;
+        border-radius: 0.375rem;
+      }
+
+      button {
+        font-size: 0.8125rem !important;
+        padding: 0.5rem 0.25rem !important;
+      }
+
+      .result {
+        padding: 12px !important;
+        margin-top: 12px !important;
+        font-size: 0.75rem;
+      }
+
+      .result strong {
+        display: block;
+        margin-top: 6px;
+      }
+
+      .result div {
+        margin-bottom: 6px;
+      }
+
+      .result iframe {
+        height: 200px !important;
+        margin-top: 8px;
+      }
+
+      .not-found {
+        font-size: 0.75rem;
+        padding: 10px !important;
+        margin-top: 10px !important;
+      }
+
+      .fas {
+        font-size: 0.875rem;
+      }
+
+      .fas.fa-certificate {
+        font-size: 1.5rem;
+      }
+
+      .fas.fa-check-circle {
+        font-size: 2rem !important;
+      }
+
+      .animate-slide-right {
+        animation: slideInFromRight 0.8s ease-out forwards;
+      }
+
+      .space-y-8 {
+        gap: 0.75rem !important;
+      }
+
+      .space-y-6 {
+        gap: 0.5rem !important;
+      }
+
+      .space-y-3 {
+        gap: 0.5rem !important;
+      }
+    }
+    /* WhatsApp Button Styles */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1101;
+    text-decoration: none;
+    max-width: 220px;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-text {
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.whatsapp-text-inner {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    line-height: 1.3;
+}
+
+.whatsapp-text-inner.show-second {
+    transform: translateY(-100%);
+}
+
+.whatsapp-hint {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.whatsapp-message {
+    font-size: 12px;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.whatsapp-btn:hover .whatsapp-icon {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Pulsing animation for attention */
+@keyframes whatsapp-pulse {
+    0% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+    }
+    100% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+}
+
+.whatsapp-btn.pulse {
+    animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+/* Mobile styles */
+@media (max-width: 760px) {
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        font-size: 13px;
+        max-width: 150px;
+    }
+    
+    .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    
+    .whatsapp-hint {
+        font-size: 11px;
+    }
+    
+    .whatsapp-message {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        bottom: 110px;
+        right: 6px;
+        padding: 10px 15px;
+        font-size: 12px;
+        max-width: 160px;
+        gap: 8px;
+    }
+    
+    .whatsapp-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 14px;
+    }
+    
+    .whatsapp-hint {
+        font-size: 10px;
+    }
+    
+    .whatsapp-message {
+        font-size: 10px;
+    }
+}
+  </style>
+  
+  <!-- Block Developer Tools on this page only -->
+  <script>
+    // Comprehensive Developer Tools Blocker
+    
+    // Function to detect and disable developer tools
+    function blockDevTools() {
+      const threshold = 160;
+      
+      // Monitor window resize - detects when devtools is opened
+      setInterval(function() {
+        if (window.outerHeight - window.innerHeight > threshold || 
+            window.outerWidth - window.innerWidth > threshold) {
+          // DevTools detected
+          if (confirm('Developer Tools are not allowed on this page.')) {
+            window.location.href = 'about:blank';
+          }
+          document.body.innerHTML = '';
+        }
+      }, 500);
+      
+      // Check if debugger is running
+      const start = performance.now();
+      debugger;
+      const end = performance.now();
+      
+      if (end - start > 100) {
+        document.body.innerHTML = '<h1>Developer Tools detected. Access denied.</h1>';
+        window.location.href = 'about:blank';
+      }
+    }
+    
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C and other shortcuts
+    document.addEventListener('keydown', function(event) {
+      const forbidden = [
+        {key: 'F12'},
+        {ctrlKey: true, shiftKey: true, key: 'I'},
+        {ctrlKey: true, shiftKey: true, key: 'J'},
+        {ctrlKey: true, shiftKey: true, key: 'C'},
+        {ctrlKey: true, shiftKey: true, key: 'K'},
+        {metaKey: true, altKey: true, key: 'I'},
+        {metaKey: true, altKey: true, key: 'J'},
+        {metaKey: true, altKey: true, key: 'U'},
+        {metaKey: true, altKey: true, key: 'C'},
+        {metaKey: true, shiftKey: true, key: 'C'}
+      ];
+      
+      for (let combo of forbidden) {
+        let match = true;
+        for (let [key, value] of Object.entries(combo)) {
+          if (key === 'key') {
+            if (event[key] !== value) match = false;
+          } else {
+            if (event[key] !== value) match = false;
+          }
+        }
+        if (match) {
+          event.preventDefault();
+          event.stopPropagation();
+          return false;
+        }
+      }
+    }, true);
+    
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }, true);
+    
+    // Disable text selection in certain cases
+    document.addEventListener('selectstart', function(event) {
+      // Allow selection but prevent copying via context menu
+      return true;
+    }, true);
+    
+    // Disable copy, cut operations
+    document.addEventListener('copy', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }, true);
+    
+    document.addEventListener('cut', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }, true);
+    
+    // Disable inspect element from context menu
+    document.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+      return false;
+    }, true);
+    
+    // Override console methods
+    const noop = function() {};
+    
+    Object.defineProperty(window, 'console', {
+      value: {
+        log: noop,
+        debug: noop,
+        info: noop,
+        warn: noop,
+        error: noop,
+        assert: noop,
+        clear: noop,
+        count: noop,
+        group: noop,
+        groupEnd: noop,
+        table: noop,
+        time: noop,
+        timeEnd: noop,
+        dir: noop,
+        dirxml: noop,
+        group: noop,
+        groupCollapsed: noop,
+        profile: noop,
+        profileEnd: noop,
+        trace: noop,
+        memory: {}
+      },
+      writable: false,
+      configurable: false
+    });
+    
+    // Disable DevTools detection variables
+    try {
+      eval("debugger");
+    } catch(e) {}
+    
+    // Start blocking
+    blockDevTools();
+    
+    // Continuously monitor
+    window.addEventListener('focus', blockDevTools, true);
+    document.addEventListener('focus', blockDevTools, true);
+  </script>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Background animation elements -->
+  <div class="bg-shape w-80 h-80 bg-primary rounded-full top-1/4 -left-20 animate-float"></div>
+  <div class="bg-shape w-64 h-64 bg-blue-900 rounded-full bottom-1/4 -right-16 animate-float" style="animation-delay: 2s;"></div>
+  <div class="bg-shape w-40 h-40 bg-primary rounded-full top-1/3 right-1/4 animate-float" style="animation-delay: 4s;"></div>
+  
+  <!-- Floating icons -->
+  <i class="floating-icon text-primary text-4xl top-1/4 right-1/3 animate-float" style="animation-delay: 1s;">
+    <i class="fas fa-certificate"></i>
+  </i>
+  <i class="floating-icon text-blue-800 text-3xl top-2/3 left-1/4 animate-float" style="animation-delay: 3s;">
+    <i class="fas fa-graduation-cap"></i>
+  </i>
+  <i class="floating-icon text-primary text-2xl bottom-1/4 left-2/3 animate-float" style="animation-delay: 5s;">
+    <i class="fas fa-award"></i>
+  </i>
+
+  <!-- Verification Container -->
+  <div class="max-w-md w-full space-y-8 bg-gray-700/20 backdrop-blur-md p-10 rounded-xl shadow-2xl animate-slide-right z-10 border border-white/30">
+    <div>
+      <div class="flex justify-center items-center mb-8">
+        <div class="h-16 w-16 rounded-full bg-slate-700 flex items-center justify-center animate-pulse-slow border-2 border-primary/30">
+          <span class="text-white text-2xl font-bold">T</span>
+        </div>
+        <span class="text-white text-3xl font-bold ml-3">TIDEF <span class="text-primary">ITECH</span></span>
+      </div>
+      <div class="certificate-icon flex justify-center">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <h2 class="mt-2 text-center text-3xl font-extrabold text-white">
+        Certificate Verification
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-400">
+        Verify your TIDEF ITECH certificate
+      </p>
+    </div>
+    
+    <!-- Animated form -->
+    <div class="mt-8 space-y-6 animate-fade-in">
+      <div class="rounded-md shadow-sm">
+        <div class="mb-5">
+          <label for="certID" class="sr-only">Certificate ID</label>
+          <div class="relative">
+            <input id="certID" type="text" required 
+                   class="input-field relative block w-full px-4 py-3 pl-12 rounded-t-md rounded-b-md focus:outline-none focus:z-10" 
+                   placeholder="Enter Certificate ID (e.g. TIDEF-2025-001)">
+            <div class="absolute left-0 inset-y-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-id-card text-gray-500"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-fade-in" style="animation-delay: 0.3s;">
+        <button id="verifyBtn" class="verify-btn group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-slate-800">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <i class="fas fa-search"></i>
+          </span>
+          Verify Certificate
+        </button>
+      </div>
+
+      <div class="animate-fade-in" style="animation-delay: 0.5s;">
+        <button id="scanBtn" class="secondary-btn group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <i class="fas fa-camera"></i>
+          </span>
+          Scan QR Code
+        </button>
+        <div id="reader" style="width: 100%; margin-top: 12px; display: none"></div>
+      </div>
+    </div>
+
+    <div class="result animate-fade-in" id="resultBox"></div>
+    <div class="not-found animate-fade-in" id="notFound">No record found for this ID!</div>
+  </div>
+
+  <script>
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbzgvDfnglicKs4dUeKMyHNFslptBADnMbWC9grPzrWxbL5GvXf4QPGq83qUrAbIoFNUcA/exec";
+
+    function convertDriveLink(url) {
+      if (url.includes("drive.google.com") && url.includes("/view")) {
+        return url.replace("/view?usp=sharing", "/preview");
+      }
+      return url;
+    }
+
+    async function verify(certID) {
+      const url = GAS_URL + "?certID=" + encodeURIComponent(certID);
+      const resp = await fetch(url);
+      return resp.json();
+    }
+
+    async function verifyCertificate() {
+      const certID = document.getElementById("certID").value.trim();
+      const resultBox = document.getElementById("resultBox");
+      const notFound = document.getElementById("notFound");
+
+      if (!certID) {
+        notFound.innerHTML = '<span style="color:#ef4444">Please enter a Certificate ID.</span>';
+        notFound.style.display = "block";
+        resultBox.style.display = "none";
+        return;
+      }
+
+      resultBox.innerHTML = `
+        <div class="text-center">
+          <i class="fas fa-spinner fa-spin text-primary text-2xl"></i>
+          <p class="mt-2">Checking certificate...</p>
+        </div>`;
+      resultBox.style.display = "block";
+      notFound.style.display = "none";
+
+      try {
+        const data = await verify(certID);
+        if (data && data.found) {
+          const safeLink = convertDriveLink(data.link);
+          resultBox.innerHTML = `
+            <div class="mb-4 text-center">
+              <i class="fas fa-check-circle text-green-500 text-4xl mb-2"></i>
+              <h3 class="text-xl font-bold text-white">Certificate Verified</h3>
+            </div>
+            <div class="space-y-3">
+              <div><strong>Certificate ID:</strong> ${certID}</div>
+              <div><strong>Name:</strong> ${data.name}</div>
+              <div><strong>Course:</strong> ${data.course}</div>
+              <div><strong>Date:</strong> ${data.date}</div>
+              <div><strong>Status:</strong> <span class="text-green-400">${data.status || "Valid"}</span></div>
+            </div>
+            <div class="watermark" style="margin-top:15px">
+              <iframe src="${safeLink}#toolbar=0&navpanes=0&scrollbar=0" 
+                style="width:100%;height:400px;border:1px solid #ddd;border-radius:8px;" 
+                frameborder="0">
+              </iframe>
+            </div>
+            <div class="mt-4 pt-4 border-t border-slate-600 text-center">
+              <button id="verifyAnotherBtn" class="secondary-btn py-2 px-4 rounded-md text-white">
+                <i class="fas fa-sync-alt mr-2"></i>Verify Another Certificate
+              </button>
+            </div>`;
+
+          // Re-bind verify another button
+          document.getElementById("verifyAnotherBtn").addEventListener("click", () => {
+            document.getElementById("certID").value = "";
+            resultBox.style.display = "none";
+            document.getElementById("certID").focus();
+          });
+        } else {
+          resultBox.style.display = "none";
+          notFound.innerHTML = '<span style="color:#ef4444">❌ Certificate not found.</span>';
+          notFound.style.display = "block";
+        }
+      } catch (err) {
+        console.error(err);
+        resultBox.style.display = "none";
+        notFound.innerHTML = '<span style="color:#ef4444">⚠️ Error verifying. Try again later.</span>';
+        notFound.style.display = "block";
+      }
+    }
+
+    // Auto-check ?certID=
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("certID")) {
+        document.getElementById("certID").value = params.get("certID");
+        verifyCertificate();
+      }
+    })();
+
+    // QR scanner
+    document.getElementById("scanBtn").addEventListener("click", () => {
+      const readerDiv = document.getElementById("reader");
+      readerDiv.style.display = "block";
+      const html5QrCode = new Html5Qrcode("reader");
+
+      html5QrCode
+        .start(
+          { facingMode: "environment" },
+          { fps: 10, qrbox: 250 },
+          (qrCodeMessage) => {
+            html5QrCode.stop();
+            readerDiv.style.display = "none";
+
+            if (qrCodeMessage.includes("certID=")) {
+              const params = new URLSearchParams(qrCodeMessage.split("?")[1]);
+              const certID = params.get("certID");
+              document.getElementById("certID").value = certID;
+              verifyCertificate();
+            } else {
+              alert("Invalid QR Code");
+            }
+          },
+          (errorMessage) => {
+            console.log(errorMessage);
+          }
+        )
+        .catch((err) => {
+          console.error("QR Code start error:", err);
+        });
+    });
+
+    // Add input animation on focus
+    document.addEventListener('DOMContentLoaded', function() {
+      const input = document.getElementById('certID');
+      const verifyBtn = document.getElementById('verifyBtn');
+      const scanBtn = document.getElementById('scanBtn');
+      
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('animate-pulse-slow');
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.classList.remove('animate-pulse-slow');
+      });
+      
+      // Add button animation on hover
+      verifyBtn.addEventListener('mouseenter', function() {
+        this.classList.add('animate-glow');
+      });
+      
+      verifyBtn.addEventListener('mouseleave', function() {
+        this.classList.remove('animate-glow');
+      });
+      
+      // Allow Enter key to trigger verification
+      input.addEventListener('keypress', function(e) {
+        if(e.key === 'Enter') {
+          verifyCertificate();
+        }
+      });
+
+      // Bind verify button
+      verifyBtn.addEventListener('click', verifyCertificate);
+      
+      // Disable right click + devtools shortcuts
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+      document.addEventListener("keydown", (e) => {
+        if (
+          (e.ctrlKey &&
+            ["s", "u", "c", "x", "p"].includes(e.key.toLowerCase())) ||
+          e.key === "F12"
+        ) {
+          e.preventDefault();
+          alert("This action is disabled.");
+        }
+      });
+    });
+  </script>
+
+  <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

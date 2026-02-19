@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Essential Cybersecurity Practices for Remote Workers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/cyb-sec-blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+          <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+          <a href="tel:+2349027772815" class="transition-all duration-300"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog</a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+                  <li><a href="certificate-verification.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Cert/Verify</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform">APPLY NOW</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[400px]" 
+           style="background-image: url('img/Ultimate Guide to Migrating Your Site from HTTP to HTTPS.jpg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold max-w-3xl">Essential Cybersecurity Practices for Remote Workers</h1>
+      <div class="flex flex-wrap items-center justify-center mt-6 gap-4 text-sm md:text-base">
+        <span class="flex items-center"><i class="fas fa-user mr-2 text-primary"></i> By Adamu Jighjigh</span>
+        <span class="flex items-center"><i class="fas fa-calendar mr-2 text-primary"></i> June 5, 2024</span>
+        <span class="flex items-center"><i class="fas fa-clock mr-2 text-primary"></i> 10 min read</span>
+        <span class="flex items-center"><i class="fas fa-comment mr-2 text-primary"></i> 12 Comments</span>
+      </div>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <a href="blog.html" class="hover:underline">Blog</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">Cybersecurity</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-3">
+          <!-- Featured Image -->
+          <div class="mb-8 scroll-animate">
+            <img src="img/Top Cybersecurity Companies to Work For in 2025.jpg" alt="Cybersecurity for Remote Workers" class="w-full h-96 object-cover rounded-lg">
+          </div>
+          
+          <!-- Blog Content -->
+          <article class="blog-content scroll-animate">
+            <p class="text-lg font-medium text-darkBlue">As remote work becomes increasingly common, cybersecurity has never been more critical. Remote workers face unique security challenges that require specific practices to protect both personal and company data. This comprehensive guide outlines essential cybersecurity practices every remote worker should implement.</p>
+            
+            <h2>Secure Your Home Network</h2>
+            <p>Your home Wi-Fi network is the first line of defense against cyber threats. Many remote workers overlook basic network security, creating vulnerabilities that hackers can exploit.</p>
+            
+            <h3>Change Default Router Settings</h3>
+            <p>Most routers come with default usernames and passwords that are publicly known. Change these immediately to prevent unauthorized access to your network.</p>
+            
+            <h3>Enable Strong Encryption</h3>
+            <p>Use WPA3 encryption if your router supports it, or at least WPA2. Avoid using WEP encryption as it's easily compromised.</p>
+            
+            <h3>Create a Guest Network</h3>
+            <p>Set up a separate network for guests and IoT devices. This prevents visitors and potentially vulnerable smart devices from accessing your work devices.</p>
+            
+            <blockquote>
+              "The security of your home network directly impacts the security of your work data. Never underestimate its importance."
+            </blockquote>
+            
+            <img src="https://images.unsplash.com/photo-1603481546238-487240415921" alt="Secure Home Network" class="w-full h-64 object-cover">
+            
+            <h2>Use a Virtual Private Network (VPN)</h2>
+            <p>A VPN creates an encrypted tunnel for your internet traffic, protecting your data from interception, especially when using public Wi-Fi networks.</p>
+            
+            <p>Always connect to your company's VPN when accessing work resources. If your employer doesn't provide one, consider using a reputable VPN service for additional security.</p>
+            
+            <h3>Benefits of Using a VPN:</h3>
+            <ul>
+              <li>Encrypts your internet connection</li>
+              <li>Hides your IP address and location</li>
+              <li>Protects against man-in-the-middle attacks</li>
+              <li>Secures data on public Wi-Fi networks</li>
+            </ul>
+            
+            <h2>Implement Multi-Factor Authentication (MFA)</h2>
+            <p>Passwords alone are no longer sufficient protection. Multi-factor authentication adds an extra layer of security by requiring additional verification beyond just a password.</p>
+            
+            <p>Enable MFA on all accounts that support it, especially email, banking, and work-related applications. Use authenticator apps rather than SMS-based codes when possible, as they're more secure.</p>
+            
+            <img src="img/Biometric Brilliance_ How Multi-Factor Authentication Reinforces Your Security Fortress.jpg" alt="Multi-Factor Authentication" class="w-full h-64 object-cover">
+            
+            <h2>Keep Software Updated</h2>
+            <p>Cybercriminals often exploit known vulnerabilities in outdated software. Regular updates patch these security holes, protecting your devices from attacks.</p>
+            
+            <h3>Essential Updates to Maintain:</h3>
+            <ul>
+              <li>Operating system updates</li>
+              <li>Web browsers and extensions</li>
+              <li>Antivirus and anti-malware software</li>
+              <li>Applications and productivity tools</li>
+              <li>Router firmware</li>
+            </ul>
+            
+            <p>Enable automatic updates where possible, and regularly check for updates on software that doesn't update automatically.</p>
+            
+            <h2>Practice Secure Communication</h2>
+            <p>Remote work relies heavily on digital communication, making it essential to use secure channels for sharing sensitive information.</p>
+            
+            <h3>Email Security</h3>
+            <p>Be cautious of phishing emails that attempt to steal credentials or install malware. Verify the sender's address, don't click on suspicious links, and never download unexpected attachments.</p>
+            
+            <h3>Use Encrypted Messaging Platforms</h3>
+            <p>For sensitive work discussions, use platforms that offer end-to-end encryption rather than standard SMS or unsecured messaging apps.</p>
+            
+            <h2>Secure Physical Workspace</h2>
+            <p>Physical security is often overlooked in remote work environments. Implement these practices to protect your devices and data from physical threats:</p>
+            
+            <ul>
+              <li>Lock your devices when stepping away</li>
+              <li>Use privacy screens to prevent shoulder surfing</li>
+              <li>Secure devices when not in use</li>
+              <li>Be mindful of backgrounds during video calls</li>
+              <li>Properly dispose of sensitive documents</li>
+            </ul>
+            
+            <h2>Backup Your Data Regularly</h2>
+            <p>Ransomware attacks can encrypt your files, making them inaccessible. Regular backups ensure you can recover your data without paying a ransom.</p>
+            
+            <p>Follow the 3-2-1 backup rule: Keep at least three copies of your data, on two different media, with one copy stored offsite (such as in the cloud).</p>
+            
+            <h2>Conclusion</h2>
+            <p>Cybersecurity for remote workers requires a proactive approach. By implementing these essential practices, you can significantly reduce your risk of cyber threats and protect both your personal information and company data.</p>
+            
+            <p>Remember that cybersecurity is an ongoing process, not a one-time setup. Stay informed about emerging threats and continuously update your security practices accordingly.</p>
+          </article>
+          
+          <!-- Tags and Share -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <div class="mb-4 md:mb-0">
+              <h4 class="font-bold text-darkBlue mb-2">Tags:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Cybersecurity</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Remote Work</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">VPN</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Best Practices</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-darkBlue mb-2">Share this post:</h4>
+              <div class="flex space-x-2">
+                <a href="www.facebook.com" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="www.twitter.com" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="share-btn link" id="copy-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Bio -->
+          <div class="author-card bg-gray-50 p-6 rounded-lg mt-8 scroll-animate">
+            <div class="flex items-center">
+              <img src="img/placeholder.jpeg" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover">
+              <div class="ml-4">
+                <h3 class="text-xl font-bold text-darkBlue">JighJigh Adamu</h3>
+                <p class="text-primary">Cybersecurity Specialist & Instructor</p>
+                <p class="text-gray-600 mt-2">He has years of experience in cybersecurity, with expertise in network security, threat detection, and security awareness training. He is passionate about helping individuals and organizations stay secure in the digital age.</p>
+                <div class="flex space-x-3 mt-3">
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment Form -->
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <h3 class="text-2xl font-bold text-darkBlue mb-6">Leave a Comment</h3>
+            <form class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                  <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                  <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                </div>
+              </div>
+              <div>
+                <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
+                <textarea id="comment" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="bg-primary text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+                POST COMMENT
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <!-- Search Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Search</h3>
+            <div class="flex">
+              <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full">
+              <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-[#e14f1a] transition">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Categories Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Categories</h3>
+            <ul class="category-list">
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Web Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">12</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Data Science</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">8</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Mobile Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">5</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cybersecurity</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">7</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cloud Computing</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">4</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Recent Posts</h3>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="web-dev-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Future of Web Development: Trends to Watch in 2024</a>
+                <p class="text-xs text-gray-500 mt-1">June 15, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="ai-in-edu-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">AI in Education: Opportunities and Challenges</a>
+                <p class="text-xs text-gray-500 mt-1">June 8, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="gett-str-python-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Getting Started with Python for Data Analysis</a>
+                <p class="text-xs text-gray-500 mt-1">June 3, 2024</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tags Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Popular Tags</h3>
+            <div class="tags">
+              <span>Web Design</span>
+              <span>Development</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>React</span>
+              <span>AI</span>
+              <span>Cloud</span>
+              <span>Security</span>
+              <span>Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-darkBlue text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+      <p class="text-lg mb-8">Stay updated with the latest news, articles, and resources from TIDEF ITECH</p>
+      <form class="flex flex-col md:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Your Email Address" class="px-6 py-3 rounded-md text-darkGray focus:outline-none focus:ring-2 focus:ring-primary w-full md:w-auto">
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+  <script src="js/cyb-sec-blog.js"></script>
+
+   <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

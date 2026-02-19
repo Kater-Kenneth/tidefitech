@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          },
+          colors: {
+            primary: '#f15a24',
+            darkBlue: '#0f172a',
+            darkGray: '#1e293b',
+            lightGray: '#64748b',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+            <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300 hover:text-white"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+            <a href="tel:+2349027772815" class="transition-all duration-300 hover:text-white"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu - Fixed the display issue -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform">APPLY NOW</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[300px]" 
+           style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
+      <h1 class="text-4xl font-bold">Our Services</h1>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">Services</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Overview Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">Comprehensive IT Solutions</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">At TIDEF ITECH, we offer a wide range of technology services designed to meet the evolving needs of individuals and businesses in the digital age.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="scroll-animate-left">
+          <p class="text-gray-600 mb-4">Our services are carefully crafted to bridge the digital skills gap and provide practical solutions that drive innovation and growth. Whether you're an individual looking to advance your career or a business seeking digital transformation, we have the expertise to help you succeed.</p>
+          <p class="text-gray-600 mb-6">With industry-experienced professionals and state-of-the-art facilities, we deliver services that combine theoretical knowledge with practical application, ensuring our clients are well-equipped for the challenges of tomorrow's technology landscape.</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-primary text-white py-2 px-6 rounded-full font-semibold">Expert Trainers</div>
+            <div class="bg-darkBlue text-white py-2 px-6 rounded-full font-semibold">Cutting-edge Tech</div>
+            <div class="bg-darkGray text-white py-2 px-6 rounded-full font-semibold">Practical Approach</div>
+          </div>
+        </div>
+        <div class="scroll-animate-right relative">
+          <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521" alt="IT Services" class="rounded-lg shadow-lg">
+          <div class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-lg">
+            <p class="text-4xl font-bold">15+</p>
+            <p class="text-sm">Services Offered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-[5%]">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">Our Services</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore our comprehensive range of IT services designed to empower individuals and transform businesses.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-laptop-code text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">IT Training & Education</h3>
+          <p class="text-gray-600 mb-4">Comprehensive training programs in web development, data science, cybersecurity, and more with industry-relevant curriculum.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Hands-on practical sessions</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Industry-certified instructors</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Career support services</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-code text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Software Development</h3>
+          <p class="text-gray-600 mb-4">Custom software solutions tailored to your business needs, from web applications to mobile apps and enterprise systems.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Web application development</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Mobile app development</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Custom software solutions</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-shield-alt text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Cybersecurity Solutions</h3>
+          <p class="text-gray-600 mb-4">Protect your digital assets with our comprehensive cybersecurity services including vulnerability assessment and penetration testing.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Security audits</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Vulnerability assessment</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Security training</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-cloud text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Cloud Computing Services</h3>
+          <p class="text-gray-600 mb-4">Migrate to the cloud with confidence. We offer cloud strategy, migration, and management services for businesses of all sizes.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Cloud migration</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Cloud infrastructure setup</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Cloud security</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-database text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Data Analytics & AI</h3>
+          <p class="text-gray-600 mb-4">Leverage the power of your data with our analytics and AI services. We help you turn data into actionable insights.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Data visualization</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Predictive analytics</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> AI solution development</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="service-card bg-white rounded-lg overflow-hidden shadow-md p-6 scroll-animate">
+          <div class="service-icon w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-network-wired text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">IT Consulting</h3>
+          <p class="text-gray-600 mb-4">Strategic IT consulting services to help your business align technology with business goals for maximum ROI.</p>
+          <ul class="text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> IT strategy development</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Technology assessment</li>
+            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> Digital transformation</li>
+          </ul>
+          <a href="#" class="text-primary font-semibold flex items-center group">
+            Learn More <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">Our Process</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We follow a structured approach to ensure the success of every project and training program.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="process-step text-center scroll-animate-left">
+          <div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Consultation</h3>
+          <p class="text-gray-600">We begin by understanding your needs, goals, and challenges through detailed consultation.</p>
+        </div>
+        
+        <div class="process-step text-center scroll-animate">
+          <div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Planning</h3>
+          <p class="text-gray-600">We develop a customized plan tailored to your specific requirements and objectives.</p>
+        </div>
+        
+        <div class="process-step text-center scroll-animate">
+          <div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Implementation</h3>
+          <p class="text-gray-600">Our experts execute the plan with precision, keeping you informed at every stage.</p>
+        </div>
+        
+        <div class="process-step text-center scroll-animate-right">
+          <div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-darkBlue mb-3">Support</h3>
+          <p class="text-gray-600">We provide ongoing support and maintenance to ensure long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-darkBlue text-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-[5%]">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="stat-item p-6 rounded-lg bg-darkGray/30 hover:bg-darkGray/50 transition-all scroll-animate">
+          <p class="text-4xl font-bold text-primary counter" data-target="200">0</p>
+          <p class="text-gray-300">Projects Completed</p>
+        </div>
+        <div class="stat-item p-6 rounded-lg bg-darkGray/30 hover:bg-darkGray/50 transition-all scroll-animate">
+          <p class="text-4xl font-bold text-primary counter" data-target="95">0</p>
+          <p class="text-gray-300">Client Satisfaction</p>
+        </div>
+        <div class="stat-item p-6 rounded-lg bg-darkGray/30 hover:bg-darkGray/50 transition-all scroll-animate">
+          <p class="text-4xl font-bold text-primary counter" data-target="15">0</p>
+          <p class="text-gray-300">IT Experts</p>
+        </div>
+        <div class="stat-item p-6 rounded-lg bg-darkGray/30 hover:bg-darkGray/50 transition-all scroll-animate">
+          <p class="text-4xl font-bold text-primary counter" data-target="5">0</p>
+          <p class="text-gray-300">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-primary text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your IT Capabilities?</h2>
+      <p class="text-lg mb-8">Whether you're looking to enhance your skills or transform your business through technology, we're here to help you succeed.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <button class="bg-white text-primary py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-gray-100 hover:scale-105">
+          EXPLORE COURSES
+        </button>
+        <button class="bg-darkBlue text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-darkGray hover:scale-105">
+          CONTACT US
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <a href="tel:+2349027772815" class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</a>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <a href="mailto:tidefitech@gmail.com" class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="services.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Services</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="js/services.js"></script>
+
+   <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

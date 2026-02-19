@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Blog Post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/web-dev-blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+          <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+          <a href="tel:+2349027772815" class="transition-all duration-300"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog</a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+                  <li><a href="certificate-verification.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Cert/Verify</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform">APPLY NOW</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[400px]" 
+           style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold max-w-3xl">Future of Web Development: Trends to Watch in 2024</h1>
+      <div class="flex flex-wrap items-center justify-center mt-6 gap-4 text-sm md:text-base">
+        <span class="flex items-center"><i class="fas fa-user mr-2 text-primary"></i> By Raphael Oryiman Anyorikyo</span>
+        <span class="flex items-center"><i class="fas fa-calendar mr-2 text-primary"></i> June 15, 2024</span>
+        <span class="flex items-center"><i class="fas fa-clock mr-2 text-primary"></i> 8 min read</span>
+        <span class="flex items-center"><i class="fas fa-comment mr-2 text-primary"></i> 08 Comments</span>
+      </div>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <a href="blog.html" class="hover:underline">Blog</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">Web Development</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-3">
+          <!-- Featured Image -->
+          <div class="mb-8 scroll-animate">
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713" alt="Web Development" class="w-full h-96 object-cover rounded-lg">
+          </div>
+          
+          <!-- Blog Content -->
+          <article class="blog-content scroll-animate">
+            <p class="text-lg font-medium text-darkBlue">The web development landscape is constantly evolving, with new technologies and approaches emerging at a rapid pace. As we look toward 2024, several key trends are shaping the future of how we build and experience the web.</p>
+            
+            <h2>The Rise of AI-Assisted Development</h2>
+            <p>Artificial Intelligence is no longer just a buzzword in web development. AI-powered tools are becoming integral to the developer workflow, from code completion and bug detection to automated testing and optimization.</p>
+            
+            <p>Tools like GitHub Copilot and Amazon CodeWhisperer are just the beginning. In 2024, we expect to see more sophisticated AI assistants that can understand complex requirements and generate entire application structures, dramatically reducing development time and lowering the barrier to entry for new developers.</p>
+            
+            <blockquote>
+              "AI won't replace developers, but developers who use AI will replace those who don't."
+            </blockquote>
+            
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6" alt="AI Development" class="w-full h-64 object-cover">
+            
+            <h2>WebAssembly: Beyond the Browser</h2>
+            <p>WebAssembly (Wasm) continues to gain traction, enabling high-performance applications to run in the browser at near-native speed. But its potential extends far beyond the browser.</p>
+            
+            <p>In 2024, we'll see WebAssembly being used for serverless functions, edge computing, and even as a universal binary format for cloud applications. This technology allows developers to write code in multiple languages (Rust, C++, Go) and run it anywhere securely and efficiently.</p>
+            
+            <h3>Key Benefits of WebAssembly:</h3>
+            <ul>
+              <li>Near-native performance in the browser</li>
+              <li>Language flexibility (not limited to JavaScript)</li>
+              <li>Enhanced security through sandboxed execution</li>
+              <li>Portability across different platforms</li>
+            </ul>
+            
+            <h2>Jamstack Architecture Matures</h2>
+            <p>The Jamstack (JavaScript, APIs, and Markup) architecture has moved from niche to mainstream, and in 2024 it will become the default approach for many web projects. The benefits of pre-rendering, CDN distribution, and enhanced security are too significant to ignore.</p>
+            
+            <p>Frameworks like Next.js, Gatsby, and Nuxt.js continue to evolve, offering more sophisticated features for static site generation, incremental static regeneration, and hybrid rendering approaches that combine the best of static and dynamic content.</p>
+            
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Jamstack Architecture" class="w-full h-64 object-cover">
+            
+            <h2>Enhanced Web Accessibility</h2>
+            <p>Accessibility is no longer an afterthought but a core requirement for web development. In 2024, we'll see tools and frameworks building accessibility into their core offerings, making it easier to create inclusive web experiences.</p>
+            
+            <p>New standards and browser APIs will help developers create more accessible applications, while automated testing tools will become more sophisticated at identifying and suggesting fixes for accessibility issues.</p>
+            
+            <h2>Conclusion</h2>
+            <p>The future of web development is exciting and dynamic. As AI-assisted tools become more prevalent, WebAssembly expands beyond the browser, Jamstack architecture matures, and accessibility becomes a first-class citizen, developers have an unprecedented opportunity to create faster, more secure, and more inclusive web experiences.</p>
+            
+            <p>Staying current with these trends and continuously learning will be essential for web developers who want to thrive in 2024 and beyond.</p>
+          </article>
+          
+          <!-- Tags and Share -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <div class="mb-4 md:mb-0">
+              <h4 class="font-bold text-darkBlue mb-2">Tags:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Web Development</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">JavaScript</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">AI</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Trends</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-darkBlue mb-2">Share this post:</h4>
+              <div class="flex space-x-2">
+                <a href="www.facebook.com" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="www.twitter.com" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="share-btn link" id="copy-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Bio -->
+          <div class="author-card bg-gray-50 p-6 rounded-lg mt-8 scroll-animate">
+            <div class="flex items-center">
+              <img src="img/My ChatGPT image.png" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover">
+              <div class="ml-4">
+                <h3 class="text-xl font-bold text-darkBlue">Raphael Oryiman Anyorikyo</h3>
+                <p class="text-primary">Lead Instructor & Full-stack Developer</p>
+                <p class="text-gray-600 mt-2">Raphael has years of experience in web development and specializes in JavaScript frameworks. He is passionate about teaching and mentoring the next generation of developers.</p>
+                <div class="flex space-x-3 mt-3">
+                  <a href="https://x.com/raphael_oryiman" class="social-icon text-gray-600"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment Form -->
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <h3 class="text-2xl font-bold text-darkBlue mb-6">Leave a Comment</h3>
+            <form class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                  <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                  <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                </div>
+              </div>
+              <div>
+                <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
+                <textarea id="comment" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="bg-primary text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+                POST COMMENT
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <!-- Search Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Search</h3>
+            <div class="flex">
+              <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full">
+              <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-[#e14f1a] transition">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Categories Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Categories</h3>
+            <ul class="category-list">
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Web Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">12</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Data Science</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">8</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Mobile Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">5</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cybersecurity</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">7</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cloud Computing</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">4</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Recent Posts</h3>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="data-sc-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">How Data Science is Transforming Business Decisions</a>
+                <p class="text-xs text-gray-500 mt-1">June 18, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="ai-in-edu-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">AI in Education: Opportunities and Challenges</a>
+                <p class="text-xs text-gray-500 mt-1">June 8, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1516383740774-fcae5ef14e74" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="cyb-sec-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Essential Cybersecurity Practices for Remote Workers</a>
+                <p class="text-xs text-gray-500 mt-1">June 5, 2024</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tags Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Popular Tags</h3>
+            <div class="tags">
+              <span>Web Design</span>
+              <span>Development</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>React</span>
+              <span>AI</span>
+              <span>Cloud</span>
+              <span>Security</span>
+              <span>Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-darkBlue text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+      <p class="text-lg mb-8">Stay updated with the latest news, articles, and resources from TIDEF ITECH</p>
+      <form class="flex flex-col md:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Your Email Address" class="px-6 py-3 rounded-md text-darkGray focus:outline-none focus:ring-2 focus:ring-primary w-full md:w-auto">
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="web-dev-details.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="ux-detail.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="js/web-dev-blog.js"></script>
+
+   <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

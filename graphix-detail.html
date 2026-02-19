@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics Design Course | TIDEF ITECH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/graphix-details.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+          <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+          <a href="tel:+2349027772815" class="transition-all duration-300"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses</a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+                  <li><a href="certificate-verification.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Cert/Verify</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform">APPLY NOW</a>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[400px]" 
+           style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Graphics Design Mastery</h1>
+      <p class="text-xl max-w-3xl mb-6">Master professional design tools and techniques to create stunning visuals for print and digital media</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="bg-primary/80 px-3 py-1 rounded-full text-sm"><i class="fas fa-clock mr-1"></i> 10 Weeks</span>
+        <span class="bg-primary/80 px-3 py-1 rounded-full text-sm"><i class="fas fa-user-graduate mr-1"></i> 20 Students</span>
+        <span class="bg-primary/80 px-3 py-1 rounded-full text-sm"><i class="fas fa-star mr-1"></i> 4.9 Rating</span>
+        <span class="bg-primary/80 px-3 py-1 rounded-full text-sm"><i class="fas fa-certificate mr-1"></i> Certificate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-100 py-3 px-4 md:px-[5%]">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-sm text-gray-600">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a> 
+        <span class="mx-2">&gt;</span> 
+        <a href="courses.html" class="hover:text-primary transition-colors">Courses</a> 
+        <span class="mx-2">&gt;</span> 
+        <span class="text-primary">Graphics Design Mastery</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Course Details Section -->
+  <section class="py-16 px-4 md:px-[5%]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="md:col-span-2">
+        <!-- Overview -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Course Overview</h2>
+          <p class="text-gray-600 mb-4">
+            Our Graphics Design Mastery course is designed to transform beginners into skilled designers capable of creating professional visuals for both print and digital media. You'll learn industry-standard tools and techniques used by professional designers worldwide.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Through hands-on projects and real-world design challenges, you'll gain practical experience with CorelDraw, Canva, PosterMyWall, and essential design resources like Remove.bg and Pinterest for inspiration.
+          </p>
+          <p class="text-gray-600">
+            By the end of this course, you'll have a professional portfolio showcasing your design skills and the confidence to take on freelance projects or pursue a career in graphic design.
+          </p>
+        </div>
+
+        <!-- Tools We Use -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Tools & Resources You'll Master</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-pen-nib text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">CorelDraw</h3>
+              <p class="text-gray-600 text-sm">Professional vector graphics editor for logo design, illustrations, and print materials.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-palette text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Canva</h3>
+              <p class="text-gray-600 text-sm">User-friendly design platform for creating social media graphics, presentations, and marketing materials.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-file-image text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">PosterMyWall</h3>
+              <p class="text-gray-600 text-sm">Online design tool specialized in creating posters, flyers, and social media graphics with templates.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-magic text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Design Resources</h3>
+              <p class="text-gray-600 text-sm">Remove.bg for background removal, Pinterest for inspiration, and other essential design resources.</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap">
+            <span class="tool-badge"><i class="fab fa-creative-commons mr-2"></i> CorelDraw</span>
+            <span class="tool-badge"><i class="fab fa-canva mr-2"></i> Canva</span>
+            <span class="tool-badge"><i class="fas fa-th-large mr-2"></i> PosterMyWall</span>
+            <span class="tool-badge"><i class="fas fa-cut mr-2"></i> Remove.bg</span>
+            <span class="tool-badge"><i class="fab fa-pinterest mr-2"></i> Pinterest</span>
+            <span class="tool-badge"><i class="fas fa-font mr-2"></i> Typography</span>
+            <span class="tool-badge"><i class="fas fa-fill-drip mr-2"></i> Color Theory</span>
+          </div>
+        </div>
+
+        <!-- Curriculum -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Curriculum</h2>
+          
+          <!-- Week 1 -->
+          <div class="curriculum-accordion border-b border-gray-200 py-4">
+            <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+              <span>Week 1-2: Design Fundamentals & CorelDraw Basics</span>
+              <i class="fas fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="curriculum-content pt-4">
+              <ul class="space-y-2">
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Principles of design (balance, contrast, hierarchy)</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Introduction to CorelDraw interface</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Working with shapes, lines, and curves</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Color theory and application</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Typography basics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Week 3 -->
+          <div class="curriculum-accordion border-b border-gray-200 py-4">
+            <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+              <span>Week 3-4: Advanced CorelDraw & Canva Mastery</span>
+              <i class="fas fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="curriculum-content pt-4">
+              <ul class="space-y-2">
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Advanced vector illustration techniques</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Logo design and branding</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Canva workspace and templates</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Creating social media graphics with Canva</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Brand kit development</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Week 5 -->
+          <div class="curriculum-accordion border-b border-gray-200 py-4">
+            <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+              <span>Week 5-6: PosterMyWall & Design Resources</span>
+              <i class="fas fa-chevron-down text-primary transition-transform"></i>
+            </button>
+            <div class="curriculum-content pt-4">
+              <ul class="space-y-2">
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Poster and flyer design with PosterMyWall</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Using Remove.bg for professional image editing</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Finding inspiration on Pinterest</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Creating mood boards</li>
+                <li class="module-item pl-4 py-2"><i class="fas fa-check-circle text-primary mr-2"></i> Sourcing free design assets</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Additional weeks would follow the same pattern -->
+          
+        </div>
+
+        <!-- Projects -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Projects You'll Create</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-signature text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Logo & Brand Identity</h3>
+              <p class="text-gray-600 text-sm">Design a complete logo and brand identity package including color palette and typography.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-newspaper text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Business Card & Letterhead</h3>
+              <p class="text-gray-600 text-sm">Create professional print materials using CorelDraw with proper bleed and trim marks.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-share-alt text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Social Media Kit</h3>
+              <p class="text-gray-600 text-sm">Design a complete set of social media graphics using Canva and PosterMyWall.</p>
+            </div>
+            
+            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <i class="fas fa-ticket-alt text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Event Flyer & Poster</h3>
+              <p class="text-gray-600 text-sm">Create eye-catching event promotional materials using advanced design techniques.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design Samples -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Student Design Samples</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="design-sample">
+              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Logo Design" class="w-full h-32 object-cover rounded">
+            </div>
+            <div class="design-sample">
+              <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Business Card" class="w-full h-32 object-cover rounded">
+            </div>
+            <div class="design-sample">
+              <img src="https://images.unsplash.com/photo-1584824486539-53bb4646bdbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Social Media Graphic" class="w-full h-32 object-cover rounded">
+            </div>
+            <div class="design-sample">
+              <img src="https://images.unsplash.com/photo-1609920658909-8d0b1957c79d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Event Flyer" class="w-full h-32 object-cover rounded">
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructors -->
+        <div class="bg-white rounded-xl shadow-lg p-6 scroll-animate">
+          <h2 class="text-2xl font-bold text-darkBlue mb-4">Meet Your Design Instructors</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="instructor-card bg-gray-50 rounded-lg p-6 flex items-center">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Instructor" class="w-16 h-16 rounded-full object-cover mr-4">
+              <div>
+                <h3 class="font-bold text-lg">David Johnson</h3>
+                <p class="text-primary text-sm mb-2">Senior Graphic Designer</p>
+                <p class="text-gray-600 text-sm">12+ years experience in branding and print design with expertise in CorelDraw and Adobe Creative Suite</p>
+              </div>
+            </div>
+            
+            <div class="instructor-card bg-gray-50 rounded-lg p-6 flex items-center">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                   alt="Instructor" class="w-16 h-16 rounded-full object-cover mr-4">
+              <div>
+                <h3 class="font-bold text-lg">Sarah Williams</h3>
+                <p class="text-primary text-sm mb-2">Digital Design Specialist</p>
+                <p class="text-gray-600 text-sm">Expert in social media graphics, digital marketing materials, and UI/UX design with Canva and PosterMyWall</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="md:col-span-1">
+        <!-- Course Info Card -->
+        <div class="sticky top-24 bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <div class="price-tag bg-primary text-white text-center py-4 px-6 rounded-lg mb-6">
+            <span class="text-3xl font-bold">₦150,000</span>
+            <p class="text-sm mt-1">One-time payment</p>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-clock text-primary"></i>
+              </div>
+              <div>
+                <p class="font-semibold">10 Weeks</p>
+                <p class="text-sm text-gray-600">Duration</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-chalkboard-teacher text-primary"></i>
+              </div>
+              <div>
+                <p class="font-semibold">40 Lessons</p>
+                <p class="text-sm text-gray-600">10 hours per week</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-certificate text-primary"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Certificate</p>
+                <p class="text-sm text-gray-600">Upon completion</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-download text-primary"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Resources</p>
+                <p class="text-sm text-gray-600">Templates & Assets</p>
+              </div>
+            </div>
+          </div>
+          
+          <button class="apply-btn w-full bg-primary text-white py-4 rounded-lg font-semibold mb-4 transition-all duration-300 hover:bg-[#e14f1a]">
+            ENROLL NOW
+          </button>
+          
+          <button class="w-full border border-primary text-primary py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
+            DOWNLOAD SYLLABUS
+          </button>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 scroll-animate">
+          <h3 class="font-bold text-lg mb-4">Course Statistics</h3>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm font-medium">Completion Rate</span>
+                <span class="text-sm font-medium">95%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm font-medium">Job Placement</span>
+                <span class="text-sm font-medium">88%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-primary h-2 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm font-medium">Student Satisfaction</span>
+                <span class="text-sm font-medium">4.9/5</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-primary h-2 rounded-full" style="width: 98%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Start Date -->
+        <div class="bg-primary text-white rounded-xl shadow-lg p-6 scroll-animate">
+          <h3 class="font-bold text-lg mb-2">Next Cohort Starts</h3>
+          <p class="text-2xl font-bold mb-4">April 10, 2025</p>
+          <p class="mb-4">Limited seats available. Enroll now to secure your spot!</p>
+          <div class="flex items-center">
+            <i class="fas fa-users mr-2"></i>
+            <span>Only 6 spots left</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-gray-50 px-4 md:px-[5%]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">What Students Say About This Course</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Hear from graduates of our Graphics Design Mastery program</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md scroll-animate-left">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">CA</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">Chioma Adeyemi</h4>
+              <p class="text-primary text-sm">Freelance Designer</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"This course completely transformed my design skills. I went from basic Canva user to mastering CorelDraw and creating professional designs for clients. The hands-on projects were incredibly valuable for building my portfolio."</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md scroll-animate">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">TO</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">Tunde Ojo</h4>
+              <p class="text-primary text-sm">Marketing Manager</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"As a marketing professional, this course gave me the design skills I needed to create compelling visuals for our campaigns. The instructors were amazing at explaining complex design concepts in simple terms."</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md scroll-animate-right">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">AE</div>
+            <div class="ml-4">
+              <h4 class="font-bold text-darkBlue">Amina Eze</h4>
+              <p class="text-primary text-sm">Small Business Owner</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"I needed to create marketing materials for my business but couldn't afford a designer. This course taught me how to create professional designs myself using CorelDraw and Canva. The best investment I've made in my business!"</p>
+          <div class="flex mt-4">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-primary text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Master Graphic Design?</h2>
+      <p class="text-lg mb-8">Join our next cohort and gain the skills to create stunning visuals for print and digital media</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXAGPlwMnDKvn3NKef_lqusHSTIxfsnRMQhPMJmrSleUK0pA/viewform" class="bg-white text-primary py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-gray-100 hover:scale-105 text-center">
+          ENROLL NOW
+        </a>
+        <a href="https://wa.me/2349027772815" class="bg-darkBlue text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-darkGray hover:scale-105 text-center" target="_blank">
+          REQUEST INFO
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 scroll-animate">
+        <h2 class="text-3xl md:text-4xl font-bold text-darkBlue">Frequently Asked Questions</h2>
+        <p class="text-gray-600 mt-4">Find answers to common questions about our Graphics Design Mastery course</p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="curriculum-accordion border-b border-gray-200 pb-4 scroll-animate">
+          <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+            <span>Do I need prior design experience to join this course?</span>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="curriculum-content pt-4">
+            <p class="text-gray-600">No prior design experience is required! Our course is designed to take you from absolute beginner to proficient designer. We start with the fundamentals and gradually progress to more advanced techniques.</p>
+          </div>
+        </div>
+        
+        <div class="curriculum-accordion border-b border-gray-200 pb-4 scroll-animate">
+          <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+            <span>What software will I need for this course?</span>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="curriculum-content pt-4">
+            <p class="text-gray-600">You'll need access to CorelDraw, which we can help you obtain at a student discount. Canva and PosterMyWall offer free versions that are sufficient for the course, though we'll also cover premium features. Remove.bg has both free and paid options we'll explore.</p>
+          </div>
+        </div>
+        
+        <div class="curriculum-accordion border-b border-gray-200 pb-4 scroll-animate">
+          <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+            <span>Will I receive a certificate upon completion?</span>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="curriculum-content pt-4">
+            <p class="text-gray-600">Yes, you'll receive a certificate of completion that verifies your skills in graphic design using CorelDraw, Canva, and PosterMyWall. This certificate can be shared with employers or clients to demonstrate your capabilities.</p>
+          </div>
+        </div>
+        
+        <div class="curriculum-accordion border-b border-gray-200 pb-4 scroll-animate">
+          <button class="w-full flex justify-between items-center text-left font-semibold text-darkBlue">
+            <span>What kind of computer do I need for this course?</span>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="curriculum-content pt-4">
+            <p class="text-gray-600">You'll need a computer with at least 8GB RAM and a modern operating system (Windows 10/11 or macOS 10.15+). CorelDraw works best on Windows but has a macOS version. For Canva and PosterMyWall, a reliable internet connection is most important.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <!-- Logo & About -->
+      <div class="reveal-up">
+        <div class="flex items-center space-x-3 mb-6">
+          <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+          <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-center space-x-3 group">
+            <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+              <i class="fas fa-phone-alt text-sm"></i>
+            </div>
+            <span class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</span>
+          </li>
+          <li class="flex items-center space-x-3 group">
+            <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+              <i class="fas fa-map-marker-alt text-sm"></i>
+            </div>
+            <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+          </li>
+          <li class="flex items-center space-x-3 group">
+            <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+              <i class="fas fa-envelope text-sm"></i>
+            </div>
+            <span class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="reveal-up" style="transition-delay: 0.1s">
+        <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+          <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div class="reveal-up" style="transition-delay: 0.2s">
+        <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="reveal-up" style="transition-delay: 0.3s">
+        <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+        <p class="text-gray-300 mb-6">
+          Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+        </p>
+        <form class="flex flex-col space-y-4">
+          <div class="relative">
+            <input type="email" placeholder="Your Email Address"
+              class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+            <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+          <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+            SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+      <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+      <div class="flex space-x-3 mt-4 md:mt-0">
+        <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/graphix-details.js"></script>
+
+     <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

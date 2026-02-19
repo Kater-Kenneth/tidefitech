@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - UI/UX Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/ui-ux-blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+          <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+          <a href="tel:+2349027772815" class="transition-all duration-300"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog</a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+                  <li><a href="certificate-verification.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Cert/Verify</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                      APPLY NOW
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[400px]" 
+           style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold max-w-3xl">What Is UI/UX Design — and Why Should You Care?</h1>
+      <div class="flex flex-wrap items-center justify-center mt-6 gap-4 text-sm md:text-base">
+        <span class="flex items-center"><i class="fas fa-user mr-2 text-primary"></i> By Jennifer Lopez</span>
+        <span class="flex items-center"><i class="fas fa-calendar mr-2 text-primary"></i> July 12, 2024</span>
+        <span class="flex items-center"><i class="fas fa-clock mr-2 text-primary"></i> 6 min read</span>
+        <span class="flex items-center"><i class="fas fa-comment mr-2 text-primary"></i> 15 Comments</span>
+      </div>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <a href="blog.html" class="hover:underline">Blog</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">UI/UX Design</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-3">
+          <!-- Featured Image -->
+          <div class="mb-8 scroll-animate">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="UI/UX Design" class="w-full h-96 object-cover rounded-lg">
+          </div>
+          
+          <!-- Blog Content -->
+          <article class="blog-content scroll-animate">
+            <p class="text-lg font-medium text-darkBlue">Have you ever visited a website or app that just felt right? Everything was easy to find, the colors looked great, and you instantly knew what to do next. That's the magic of great UI/UX design.</p>
+            
+            <p>Whether you're shopping online, booking a flight, or scrolling through social media, you're interacting with user interfaces and experiences every day. But what do these terms really mean—and why do they matter?</p>
+            
+            <h2>UI vs. UX: What's the Difference?</h2>
+            <p>Let's break it down:</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 my-6">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-primary mb-3">UI (User Interface)</h3>
+                <p class="text-gray-700">Is what you see and touch — the buttons, menus, colors, fonts, and layout.</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-primary mb-3">UX (User Experience)</h3>
+                <p class="text-gray-700">Is how it feels — how easy it is to use, how quickly you find what you need, and how enjoyable the process is.</p>
+              </div>
+            </div>
+            
+            <p>Imagine a coffee shop:</p>
+            <ul>
+              <li><strong>UI</strong> is the decor, the menu board, and how your coffee is served.</li>
+              <li><strong>UX</strong> is how friendly the staff are, how quickly you get your drink, and how comfortable the seating feels.</li>
+            </ul>
+            
+            <p>Both matter — but together, they create the full experience.</p>
+            
+            <blockquote>
+              "Good design is obvious. Great design is transparent." — Joe Sparano
+            </blockquote>
+            
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="UI/UX Design Process" class="w-full h-64 object-cover">
+            
+            <h2>Why UI/UX Matters</h2>
+            <p>Good design isn't just for developers or designers — it affects everyone who uses digital products.</p>
+            
+            <p>Here's why it matters:</p>
+            <ul>
+              <li><strong>Saves time:</strong> You find what you need faster.</li>
+              <li><strong>Reduces frustration:</strong> No more endless clicking or confusing layouts.</li>
+              <li><strong>Builds trust:</strong> A smooth experience makes users feel confident in a brand.</li>
+              <li><strong>Boosts accessibility:</strong> Inclusive design helps everyone — including users with disabilities — interact comfortably.</li>
+            </ul>
+            
+            <h3>The Business Impact</h3>
+            <p>Beyond user satisfaction, good UI/UX design has tangible business benefits:</p>
+            
+            <div class="bg-primary/10 p-6 rounded-lg my-6">
+              <h4 class="font-bold text-darkBlue mb-3">By the Numbers:</h4>
+              <ul class="space-y-2">
+                <li>Every $1 invested in UX brings $100 in return (Forrester Research)</li>
+                <li>70% of online businesses fail due to bad usability</li>
+                <li>Good UX design can increase conversion rates by up to 400%</li>
+              </ul>
+            </div>
+            
+            <h2>Everyday Examples of Great UI/UX</h2>
+            <p>You experience great design more often than you think:</p>
+            
+            <div class="grid md:grid-cols-3 gap-4 my-6">
+              <div class="text-center">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-film text-primary text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-darkBlue">Netflix</h4>
+                <p class="text-sm text-gray-600 mt-2">Easy navigation, personalized recommendations, and smooth playback.</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-map-marked-alt text-primary text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-darkBlue">Google Maps</h4>
+                <p class="text-sm text-gray-600 mt-2">Clear directions, real-time updates, and intuitive controls.</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-mobile-alt text-primary text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-darkBlue">Mobile Banking Apps</h4>
+                <p class="text-sm text-gray-600 mt-2">Secure, simple, and fast transactions.</p>
+              </div>
+            </div>
+            
+            <p>These platforms succeed because they put user experience first.</p>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Design Process" class="w-full h-64 object-cover">
+            
+            <h2>The Human Side of Design</h2>
+            <p>Great design starts with empathy.</p>
+            
+            <p>Designers constantly ask:</p>
+            <ul>
+              <li>What does the user need?</li>
+              <li>What might confuse them?</li>
+              <li>How can we make this easier or more enjoyable?</li>
+            </ul>
+            
+            <p>They test, gather feedback, and keep improving. It's not just about making things pretty — it's about making them work beautifully.</p>
+            
+            <h3>The Design Thinking Process</h3>
+            <p>UI/UX designers follow a structured approach:</p>
+            
+            <div class="bg-gray-50 p-6 rounded-lg my-6">
+              <div class="flex flex-wrap justify-between">
+                <div class="text-center w-1/5 mb-4">
+                  <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="font-bold">1</span>
+                  </div>
+                  <p class="text-sm font-medium">Empathize</p>
+                </div>
+                <div class="text-center w-1/5 mb-4">
+                  <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="font-bold">2</span>
+                  </div>
+                  <p class="text-sm font-medium">Define</p>
+                </div>
+                <div class="text-center w-1/5 mb-4">
+                  <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="font-bold">3</span>
+                  </div>
+                  <p class="text-sm font-medium">Ideate</p>
+                </div>
+                <div class="text-center w-1/5 mb-4">
+                  <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="font-bold">4</span>
+                  </div>
+                  <p class="text-sm font-medium">Prototype</p>
+                </div>
+                <div class="text-center w-1/5 mb-4">
+                  <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span class="font-bold">5</span>
+                  </div>
+                  <p class="text-sm font-medium">Test</p>
+                </div>
+              </div>
+            </div>
+            
+            <h2>The Future of UI/UX Design</h2>
+            <p>As technology evolves, so does design:</p>
+            <ul>
+              <li><strong>Voice assistants</strong> like Siri and Alexa are changing how we interact.</li>
+              <li><strong>Augmented Reality (AR)</strong> is blending digital and physical spaces.</li>
+              <li><strong>Personalization</strong> is making apps feel tailor-made for every user.</li>
+            </ul>
+            
+            <p>No matter how advanced things get, the goal remains the same:</p>
+            <p class="text-xl font-medium text-primary my-4">Make digital experiences simple, helpful, and human.</p>
+            
+            <h2>Final Thought</h2>
+            <p>UI/UX design is everywhere — and when it's done right, you barely notice it.</p>
+            
+            <p>But when it's done wrong, you feel it instantly.</p>
+            
+            <p>Next time you enjoy a smooth app or website, take a moment to appreciate the design behind it.</p>
+            
+            <p>And if you're building something yourself, remember:</p>
+            
+            <blockquote>
+              Design isn't just decoration — it's the key to connection.
+            </blockquote>
+          </article>
+          
+          <!-- Tags and Share -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <div class="mb-4 md:mb-0">
+              <h4 class="font-bold text-darkBlue mb-2">Tags:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">UI/UX Design</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">User Experience</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Design Thinking</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Digital Products</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-darkBlue mb-2">Share this post:</h4>
+              <div class="flex space-x-2">
+                <a href="www.facebook.com" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="www.twitter.com" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="share-btn link" id="copy-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Bio -->
+          <div class="author-card bg-gray-50 p-6 rounded-lg mt-8 scroll-animate">
+            <div class="flex items-center">
+              <img src="img/ken.jpg" alt="Kater Kenneth" class="w-16 h-16 rounded-full object-cover">
+              <div class="ml-4">
+                <h3 class="text-xl font-bold text-darkBlue">Kater Kenneth</h3>
+                <p class="text-primary">Senior UI/UX Designer & Instructor</p>
+                <p class="text-gray-600 mt-2">Kenneth has years of experience in UI/UX design, working with both startups and companies. He is passionate about creating intuitive digital experiences and mentoring the next generation of designers.</p>
+                <div class="flex space-x-3 mt-3">
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment Form -->
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <h3 class="text-2xl font-bold text-darkBlue mb-6">Leave a Comment</h3>
+            <form class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                  <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                  <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                </div>
+              </div>
+              <div>
+                <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
+                <textarea id="comment" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="bg-primary text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+                POST COMMENT
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <!-- Search Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Search</h3>
+            <div class="flex">
+              <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full">
+              <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-[#e14f1a] transition">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Categories Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Categories</h3>
+            <ul class="category-list">
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Web Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">12</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">UI/UX Design</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">9</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Data Science</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">8</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cybersecurity</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">7</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Mobile Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">5</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Recent Posts</h3>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="web-dev-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Future of Web Development: Trends to Watch in 2024</a>
+                <p class="text-xs text-gray-500 mt-1">June 15, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="ai-in-edu-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">AI in Education: Opportunities and Challenges</a>
+                <p class="text-xs text-gray-500 mt-1">June 8, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1608452964553-9b4d97b2752f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGN5YmVyc2VjdXJpdHl8ZW58MHx8MHx8fDA%3D" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="cyb-sec-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Essential Cybersecurity Practices for Remote Workers</a>
+                <p class="text-xs text-gray-500 mt-1">June 5, 2024</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tags Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Popular Tags</h3>
+            <div class="tags">
+              <span>UI Design</span>
+              <span>UX Research</span>
+              <span>Figma</span>
+              <span>Prototyping</span>
+              <span>User Testing</span>
+              <span>Wireframing</span>
+              <span>Design Systems</span>
+              <span>Accessibility</span>
+              <span>Mobile UI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-darkBlue text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+      <p class="text-lg mb-8">Stay updated with the latest news, articles, and resources from TIDEF ITECH</p>
+      <form class="flex flex-col md:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Your Email Address" class="px-6 py-3 rounded-md text-darkGray focus:outline-none focus:ring-2 focus:ring-primary w-full md:w-auto">
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+   <script src="js/ui-ux-blog.js"></script>
+
+      <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>

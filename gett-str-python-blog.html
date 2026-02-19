@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDEF ITECH - Python for Data Analysis Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/gett-str-python-blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Page-scoped fixes: only affect article content to prevent horizontal overflow on small screens */
+    @media (max-width: 768px) {
+      /* Prevent page-wide horizontal scroll without altering header/nav layout */
+      html, body { overflow-x: hidden; }
+
+      /* Limit article container children to viewport width */
+      .blog-content, .blog-content * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+      }
+
+      /* Make long code blocks wrap instead of overflowing */
+      .blog-content pre, .blog-content code, .blog-content pre code {
+        white-space: pre-wrap !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        max-width: 100% !important;
+      }
+
+      /* Ensure images inside blog content scale down */
+      .blog-content img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Top Header -->
+  <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
+      <div class="flex space-x-4 mb-3 md:mb-0">
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info flex flex-col md:flex-row md:space-x-6 text-center md:text-left space-y-2 md:space-y-0">
+          <span class="transition-all duration-300"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State.</span>
+          <a href="mailto:tidefitech@gmail.com" class="transition-all duration-300"><i class="fas fa-envelope mr-2 text-primary"></i> tidefitech@gmail.com</a>
+          <a href="tel:+2349027772815" class="transition-all duration-300"><i class="fas fa-phone-alt mr-2 text-primary"></i> (+234) 902 777 2815</a>
+      </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav id="main-nav" class="sticky-nav bg-darkGray py-3 px-4 md:px-[5%] text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center justify-between w-full md:w-auto">
+              <div class="logo-container flex items-center animate-slide-left">
+                  <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-10">
+                  <span class="text-white text-2xl font-bold ml-2">TIDEF <span class="text-primary">ITECH</span></span>
+              </div>
+              
+              <!-- Hamburger Menu Button -->
+              <button id="mobile-menu-button"  style="width: fit-content !important;" class="md:hidden text-white text-2xl focus:outline-none">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          
+          <!-- Navigation Menu -->
+          <div id="mobile-menu" class="md:flex mt-4 md:mt-0 bg-darkGray md:bg-transparent rounded-lg md:rounded-none">
+              <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 md:mb-0">
+                  <li><a href="index.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Home</a></li>
+                  <li><a href="about.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">About <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="courses.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Courses <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="services.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Services <i class="fas fa-caret-down ml-1"></i></a></li>
+                  <li><a href="blog.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Blog</a></li>
+                  <li><a href="contact.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Contact</a></li>
+                  <li><a href="certificate-verification.html" class="nav-link font-medium text-gray-200 transition-all duration-300 hover:text-primary block py-3 md:py-0 px-4 md:px-0 rounded md:rounded-none">Cert/Verify</a></li>
+              </ul>
+              
+              <div class="flex items-center pt-4 md:pt-0 border-t border-gray-700 md:border-t-0 md:pl-6">
+                  <button class="text-gray-200 text-lg mr-4 transition-all duration-300 hover:text-primary hover:scale-110">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <button class="apply-btn bg-primary text-white py-3 px-6 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105 w-full md:w-auto">
+                      APPLY NOW
+                  </button>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[400px]" 
+           style="background-image: url('img/wallpaper Python - Notebook.jpeg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold max-w-3xl">Getting Started with Python for Data Analysis</h1>
+      <div class="flex flex-wrap items-center justify-center mt-6 gap-4 text-sm md:text-base">
+        <span class="flex items-center"><i class="fas fa-user mr-2 text-primary"></i> By </span>
+        <span class="flex items-center"><i class="fas fa-calendar mr-2 text-primary"></i> August 15, 2024</span>
+        <span class="flex items-center"><i class="fas fa-clock mr-2 text-primary"></i> 12 min read</span>
+        <span class="flex items-center"><i class="fas fa-comment mr-2 text-primary"></i> 8 Comments</span>
+      </div>
+      <p class="mt-2 text-sm">
+        <a href="index.html" class="hover:underline">Home</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <a href="blog.html" class="hover:underline">Blog</a> 
+        <span class="mx-2">&gt;&gt;</span> 
+        <span class="text-primary">Data Science</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-3">
+          <!-- Featured Image -->
+          <div class="mb-8 scroll-animate">
+            <img src="img/Python development Company.jpeg" alt="Python Data Analysis" class="w-full h-96 object-cover rounded-lg">
+          </div>
+          
+          <!-- Blog Content -->
+          <article class="blog-content scroll-animate">
+            <p class="text-lg font-medium text-darkBlue">Python has become the go-to language for data analysis due to its simplicity, versatility, and powerful ecosystem of libraries. Whether you're a beginner or an experienced programmer, this guide will help you get started with Python for data analysis.</p>
+            
+            <h2>Why Python for Data Analysis?</h2>
+            <p>Python's popularity in data science stems from several key advantages:</p>
+            
+            <ul>
+              <li><strong>Easy to learn:</strong> Python has a simple, readable syntax that's beginner-friendly</li>
+              <li><strong>Rich ecosystem:</strong> Numerous specialized libraries for data manipulation, visualization, and machine learning</li>
+              <li><strong>Community support:</strong> Large, active community with extensive documentation and resources</li>
+              <li><strong>Versatility:</strong> Can handle everything from simple data cleaning to complex machine learning models</li>
+              <li><strong>Integration:</strong> Works well with other languages and tools in the data ecosystem</li>
+            </ul>
+            
+            <blockquote>
+              "Python's simplicity and powerful libraries make it the perfect language for both beginners and experts in data analysis."
+            </blockquote>
+            
+            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Python Code" class="w-full h-64 object-cover">
+            
+            <h2>Essential Python Libraries for Data Analysis</h2>
+            <p>To get started with data analysis in Python, you'll need to familiarize yourself with these core libraries:</p>
+            
+            <h3>1. Pandas</h3>
+            <p>Pandas is the workhorse of data manipulation in Python. It provides data structures and operations for manipulating numerical tables and time series.</p>
+            
+            <pre><code>import pandas as pd
+
+# Create a DataFrame
+data = {'Name': ['John', 'Anna', 'Peter', 'Linda'],
+        'Age': [28, 24, 35, 32],
+        'City': ['New York', 'Paris', 'Berlin', 'London']}
+
+df = pd.DataFrame(data)
+print(df.head())</code></pre>
+            
+            <h3>2. NumPy</h3>
+            <p>NumPy is the fundamental package for scientific computing with Python. It provides support for arrays, matrices, and mathematical functions.</p>
+            
+            <pre><code>import numpy as np
+
+# Create a numpy array
+arr = np.array([1, 2, 3, 4, 5])
+print(arr * 2)  # Output: [ 2  4  6  8 10]</code></pre>
+            
+            <h3>3. Matplotlib & Seaborn</h3>
+            <p>These libraries are used for data visualization. Matplotlib provides basic plotting functionality, while Seaborn builds on it with more sophisticated visualizations.</p>
+            
+            <pre><code>import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a simple plot
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.title('Simple Plot')
+plt.show()</code></pre>
+            
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Data Visualization" class="w-full h-64 object-cover">
+            
+            <h2>Setting Up Your Environment</h2>
+            <p>Before you start analyzing data, you need to set up your Python environment. Here are the recommended steps:</p>
+            
+            <ol>
+              <li>Install Python (preferably Python 3.7 or higher)</li>
+              <li>Set up a virtual environment</li>
+              <li>Install the necessary libraries (pandas, numpy, matplotlib, seaborn)</li>
+              <li>Choose an IDE or notebook environment (Jupyter Notebook, VS Code, PyCharm)</li>
+            </ol>
+            
+            <p>For beginners, using Jupyter Notebook is highly recommended as it allows for interactive coding and visualization.</p>
+            
+            <h2>Basic Data Analysis Workflow</h2>
+            <p>A typical data analysis project in Python follows these steps:</p>
+            
+            <h3>1. Loading Data</h3>
+            <p>Pandas can read data from various formats including CSV, Excel, JSON, and SQL databases.</p>
+            
+            <pre><code># Load data from a CSV file
+df = pd.read_csv('data.csv')
+
+# Load data from an Excel file
+df = pd.read_excel('data.xlsx')</code></pre>
+            
+            <h3>2. Exploring Data</h3>
+            <p>Once you've loaded your data, you'll want to explore its structure and contents.</p>
+            
+            <pre><code># View the first few rows
+print(df.head())
+
+# Get information about the DataFrame
+print(df.info())
+
+# Get statistical summary
+print(df.describe())</code></pre>
+            
+            <h3>3. Cleaning Data</h3>
+            <p>Real-world data is often messy and requires cleaning before analysis.</p>
+            
+            <pre><code># Check for missing values
+print(df.isnull().sum())
+
+# Fill missing values
+df.fillna(0, inplace=True)
+
+# Remove duplicates
+df.drop_duplicates(inplace=True)</code></pre>
+            
+            <h3>4. Analyzing Data</h3>
+            <p>This is where you perform calculations and transformations to extract insights.</p>
+            
+            <pre><code># Group data and calculate aggregates
+grouped = df.groupby('category')['value'].mean()
+
+# Apply functions to transform data
+df['new_column'] = df['existing_column'].apply(lambda x: x * 2)</code></pre>
+            
+            <h3>5. Visualizing Data</h3>
+            <p>Visualizations help you understand patterns and relationships in your data.</p>
+            
+            <pre><code># Create a histogram
+df['column_name'].hist()
+plt.title('Distribution of Values')
+plt.show()
+
+# Create a scatter plot
+plt.scatter(df['x'], df['y'])
+plt.title('Relationship between X and Y')
+plt.show()</code></pre>
+            
+            <img src="https://images.unsplash.com/photo-1553484772-2b6d66616e32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Data Analysis" class="w-full h-64 object-cover">
+            
+            <h2>Next Steps in Your Python Data Analysis Journey</h2>
+            <p>Once you've mastered the basics, consider exploring these advanced topics:</p>
+            
+            <ul>
+              <li>Machine learning with Scikit-learn</li>
+              <li>Statistical analysis with Statsmodels</li>
+              <li>Big data processing with PySpark</li>
+              <li>Deep learning with TensorFlow or PyTorch</li>
+              <li>Web scraping for data collection with BeautifulSoup or Scrapy</li>
+            </ul>
+            
+            <h2>Conclusion</h2>
+            <p>Python provides an accessible yet powerful platform for data analysis. With its rich ecosystem of libraries and supportive community, anyone can start extracting insights from data. The key is to start with the fundamentals—pandas for data manipulation, matplotlib/seaborn for visualization—and gradually build your skills from there.</p>
+            
+            <p>Remember that data analysis is as much about asking the right questions as it is about technical skills. Practice with real datasets, participate in communities like Kaggle, and don't be afraid to experiment. Happy analyzing!</p>
+          </article>
+          
+          <!-- Tags and Share -->
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <div class="mb-4 md:mb-0">
+              <h4 class="font-bold text-darkBlue mb-2">Tags:</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Python</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Data Analysis</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Pandas</span>
+                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Data Science</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-darkBlue mb-2">Share this post:</h4>
+              <div class="flex space-x-2">
+                <a href="www.facebook.com" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="www.twitter.com" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="share-btn link" id="copy-link"><i class="fas fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Bio -->
+          <div class="author-card bg-gray-50 p-6 rounded-lg mt-8 scroll-animate">
+            <div class="flex items-center">
+              <img src="" alt="" class="w-16 h-16 rounded-full object-cover">
+              <div class="ml-4">
+                <h3 class="text-xl font-bold text-darkBlue"></h3>
+                <p class="text-primary">Data Scientist & Python Instructor</p>
+                <p class="text-gray-600 mt-2">has years of experience in data analysis and machine learning. He specializes in teaching Python for data science and has helped hundreds of students launch their careers in data.</p>
+                <div class="flex space-x-3 mt-3">
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment Form -->
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg scroll-animate">
+            <h3 class="text-2xl font-bold text-darkBlue mb-6">Leave a Comment</h3>
+            <form class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                  <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                  <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                </div>
+              </div>
+              <div>
+                <label for="comment" class="block text-gray-700 mb-2">Your Comment</label>
+                <textarea id="comment" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="bg-primary text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+                POST COMMENT
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <!-- Search Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Search</h3>
+            <div class="flex">
+              <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full">
+              <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-[#e14f1a] transition">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Categories Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Categories</h3>
+            <ul class="category-list">
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">UI/UX Design</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">15</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Web Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">12</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Data Science</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">8</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Mobile Development</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">5</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <a href="#" class="text-gray-700 hover:text-primary transition">Cybersecurity</a>
+                <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">7</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Recent Posts</h3>
+            <div class="recent-post">
+              <img src="img/Python development Company.jpeg" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="#" class="text-sm font-medium text-darkBlue hover:text-primary">Getting Started with Python for Data Analysis</a>
+                <p class="text-xs text-gray-500 mt-1">August 15, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="ui-ux-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Future of UI/UX Design: Trends to Watch in 2024</a>
+                <p class="text-xs text-gray-500 mt-1">July 22, 2024</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <img src="https://images.unsplash.com/photo-1608452964553-9b4d97b2752f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGN5YmVyc2VjdXJpdHl8ZW58MHx8MHx8fDA%3D" alt="Post" class="w-16 h-16 object-cover rounded-md">
+              <div class="ml-3">
+                <a href="cyb-sec-blog.html" class="text-sm font-medium text-darkBlue hover:text-primary">Essential Cybersecurity Practices for Remote Workers</a>
+                <p class="text-xs text-gray-500 mt-1">June 5, 2024</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tags Widget -->
+          <div class="sidebar-widget scroll-animate-right">
+            <h3 class="text-xl font-bold text-darkBlue mb-4">Popular Tags</h3>
+            <div class="tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Data Analysis</span>
+              <span>NumPy</span>
+              <span>Visualization</span>
+              <span>Machine Learning</span>
+              <span>Jupyter</span>
+              <span>Data Cleaning</span>
+              <span>Data Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 px-4 md:px-[5%] bg-darkBlue text-white">
+    <div class="max-w-4xl mx-auto text-center scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+      <p class="text-lg mb-8">Stay updated with the latest news, articles, and resources from TIDEF ITECH</p>
+      <form class="flex flex-col md:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Your Email Address" class="px-6 py-3 rounded-md text-darkGray focus:outline-none focus:ring-2 focus:ring-primary w-full md:w-auto">
+        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="bg-darkBlue text-white pt-20 pb-10 px-6 md:px-[5%]">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+    <!-- Logo & About -->
+    <div class="reveal-up">
+      <div class="flex items-center space-x-3 mb-6">
+        <img src="img/Capture-removebg-preview.png" alt="TIDEF ITECH" class="h-12">
+        <h2 class="text-2xl font-bold">TIDEF <span class="text-primary">ITECH</span></h2>
+      </div>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        TIDEF ITECH is a premier technology innovation hub dedicated to transforming beginners into skilled tech professionals through industry-relevant programs and hands-on learning experiences.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-phone-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">+234 902 777 2815</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-map-marker-alt text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">No. 5 Savaida Plaza, George Akume Way, Makurdi, Benue State</span>
+        </li>
+        <li class="flex items-center space-x-3 group">
+          <div class="bg-primary text-white w-10 h-10 rounded-full flex justify-center items-center transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-sm"></i>
+          </div>
+          <span class="text-gray-300 group-hover:text-white transition-colors">tidefitech@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="reveal-up" style="transition-delay: 0.1s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Courses</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Admissions</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Testimonials</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Terms Of Service</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal-up" style="transition-delay: 0.2s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Our Programs</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Web Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Data Science</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cybersecurity</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> UI/UX Design</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Mobile Development</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors flex items-center group"><i class="fas fa-chevron-right text-xs mr-2 text-primary group-hover:translate-x-1 transition-transform"></i> Cloud Computing</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="reveal-up" style="transition-delay: 0.3s">
+      <h3 class="text-lg font-semibold mb-6 pb-2 border-b-2 border-primary inline-block">Stay Updated</h3>
+      <p class="text-gray-300 mb-6">
+        Subscribe to our newsletter for the latest updates on courses, events, and tech industry insights.
+      </p>
+      <form class="flex flex-col space-y-4">
+        <div class="relative">
+          <input type="email" placeholder="Your Email Address"
+            class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary pr-12">
+          <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <button class="group bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#d1491e] transition-all flex items-center justify-center">
+          SUBSCRIBE NOW <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm max-w-7xl mx-auto reveal-up">
+    <p>© Copyright 2025 TIDEF ITECH. All Rights Reserved.</p>
+    <div class="flex space-x-3 mt-4 md:mt-0">
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-icon bg-primary/20 text-white w-10 h-10 rounded-full flex justify-center items-center transition-all hover:bg-primary hover:scale-110">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="js/gett-str-python-blog.js"></script>
+
+   <!-- WhatsApp Button -->
+<a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH" target="_blank" rel="noopener noreferrer" class="whatsapp-btn pulse">
+    <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-text">
+        <div class="whatsapp-text-inner" id="whatsapp-text-switcher">
+            <div class="whatsapp-hint">Have a question?</div>
+            <div class="whatsapp-message">Message us</div>
+        </div>
+    </div>
+</a>
+
+<script>
+    // WhatsApp Button Text Animation
+    const whatsappTextSwitcher = document.getElementById('whatsapp-text-switcher');
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    let isSecondText = false;
+
+    setInterval(() => {
+        isSecondText = !isSecondText;
+        whatsappTextSwitcher.classList.toggle('show-second');
+    }, 3500);
+
+    // Stop pulse animation on hover
+    whatsappBtn.addEventListener('mouseenter', () => {
+        whatsappBtn.classList.remove('pulse');
+    });
+
+    whatsappBtn.addEventListener('mouseleave', () => {
+        whatsappBtn.classList.add('pulse');
+    });
+</script>
+</body>
+</html>
