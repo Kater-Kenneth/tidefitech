@@ -399,22 +399,23 @@ transition: all 0.3s ease;
 
 @media (max-width: 480px) {
     .whatsapp-btn {
-        bottom: 15px;
-        right: 15px;
+        bottom: 60px;
+        right: 6px;
         padding: 10px 15px;
         font-size: 12px;
-        max-width: 160px;
+        max-width: 120px;
         gap: 8px;
     }
     
     .whatsapp-icon {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
         font-size: 14px;
     }
     
     .whatsapp-hint {
-        font-size: 10px;
+        font-size: 8px;
+        color:#c3ff00;
     }
     
     .whatsapp-message {
