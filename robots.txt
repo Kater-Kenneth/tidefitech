@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /admin
+Disallow: /private
+
+# Sitemaps
+Sitemap: https://tidefitec.com/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Comment: Allow search engines to crawl all public pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
