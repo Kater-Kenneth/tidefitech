@@ -84,6 +84,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    display:block
 }
 
 .apply-btn::before {
