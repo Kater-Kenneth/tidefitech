@@ -84,6 +84,8 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    display: block;
+    text-align: center;
 }
 
 .apply-btn::before {
