@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// newsletter.js
-// ===== NEWSLETTER (TECH FORM ONLY) =====
+
+// ===== workshop =====
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("techForm");
@@ -128,3 +128,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+/*End of newsletter.js */
