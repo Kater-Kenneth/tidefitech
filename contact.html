@@ -172,9 +172,7 @@
   <h3 class="text-2xl font-bold text-darkBlue mb-6">Send Us a Message</h3>
 
   <!-- Message container -->
-  <div id="formMessage" class="hidden p-4 mb-6 rounded-md"></div>
-
-  <form id="contactForm" class="space-y-6">
+    <form id="contactForm" class="space-y-6">
     <div class="grid md:grid-cols-2 gap-6">
       <div>
         <label for="name" class="block text-gray-700 mb-2">Your Name</label>
@@ -197,6 +195,7 @@
       <label for="message" class="block text-gray-700 mb-2">Your Message</label>
       <textarea id="message" name="message" class="form-input" placeholder="Enter your message" required></textarea>
     </div>
+    <div id="formMessage" class="hidden p-4 mb-6 rounded-md"></div>
     <button type="submit" class="apply-btn bg-primary text-white py-3 px-8 rounded-md font-semibold transition-all duration-300 hover:bg-[#e14f1a] hover:scale-105">
       SEND MESSAGE <i class="fas fa-arrow-right ml-2"></i>
     </button>
