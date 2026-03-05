@@ -1138,44 +1138,44 @@
   <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
     
     <!-- Left Form -->
-    <div class="bg-gradient-to-r from-[#ff6600] to-[#ff8c42] p-8 rounded-2xl shadow-2xl transform transition-all duration-700">
-      <div class="flex items-center mb-4">
-        <div class="bg-white p-2 rounded-full mr-3">
-          <i class="fas fa-microchip text-[#ff6600] text-xl"></i>
-        </div>
-        <h2 class="text-2xl font-bold">Join Our Tech Community</h2>
-      </div>
-      <p class="text-orange-100 mb-6">Register for our next innovation workshop and connect with tech leaders.</p>
-
-      <form class="space-y-4">
-        <div class="relative">
-          <i class="fas fa-user absolute left-3 top-3 text-gray-500"></i>
-          <input type="text" placeholder="Your Name" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]">
-        </div>
-        <div class="relative">
-          <i class="fas fa-envelope absolute left-3 top-3 text-gray-500"></i>
-          <input type="email" placeholder="Email Address" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]">
-        </div>
-        <div class="relative">
-          <i class="fas fa-laptop-code absolute left-3 top-3 text-gray-500"></i>
-          <select class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]">
-            <option>Choose Workshop</option>
-            <option>AI & Machine Learning</option>
-            <option>Web Development</option>
-            <option>Cloud Computing</option>
-            <option>Cybersecurity</option>
-            <option>Data Science</option>
-          </select>
-        </div>
-        <div class="relative">
-          <i class="fas fa-comment absolute left-3 top-3 text-gray-500"></i>
-          <textarea placeholder="Your Tech Interests" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-white text-[#ff6600] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-md">
-          REGISTER FOR WORKSHOP <i class="fas fa-arrow-right ml-2"></i>
-        </button>
-      </form>
+<div class="bg-gradient-to-r from-[#ff6600] to-[#ff8c42] p-8 rounded-2xl shadow-2xl transform transition-all duration-700">
+  <div class="flex items-center mb-4">
+    <div class="bg-white p-2 rounded-full mr-3">
+      <i class="fas fa-microchip text-[#ff6600] text-xl"></i>
     </div>
+    <h2 class="text-2xl font-bold">Join Our Tech Community</h2>
+  </div>
+  <p class="text-orange-100 mb-6">Register for our next innovation workshop and connect with tech leaders.</p>
+
+  <form id="techForm" class="space-y-4">
+    <div class="relative">
+      <i class="fas fa-user absolute left-3 top-3 text-gray-500"></i>
+      <input type="text" name="name" placeholder="Your Name" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]" required>
+    </div>
+    <div class="relative">
+      <i class="fas fa-envelope absolute left-3 top-3 text-gray-500"></i>
+      <input type="email" name="email" placeholder="Email Address" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]" required>
+    </div>
+    <div class="relative">
+      <i class="fas fa-laptop-code absolute left-3 top-3 text-gray-500"></i>
+      <select name="workshop" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]" required>
+        <option value="">Choose Workshop</option>
+        <option>AI & Machine Learning</option>
+        <option>Web Development</option>
+        <option>Cloud Computing</option>
+        <option>Cybersecurity</option>
+        <option>Data Science</option>
+      </select>
+    </div>
+    <div class="relative">
+      <i class="fas fa-comment absolute left-3 top-3 text-gray-500"></i>
+      <textarea name="interests" placeholder="Your Tech Interests" class="w-full pl-10 p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#ff6600]" required></textarea>
+    </div>
+    <button type="submit" class="w-full bg-white text-[#ff6600] font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-md">
+      REGISTER FOR WORKSHOP <i class="fas fa-arrow-right ml-2"></i>
+    </button>
+  </form>
+</div>
 
     <!-- Right Skills -->
     <div>

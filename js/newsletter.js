@@ -56,3 +56,75 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+// newsletter.js
+// ===== NEWSLETTER (TECH FORM ONLY) =====
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("techForm");
+  if (!form) return; // Prevent conflict with other forms
+
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxSmof5rdEaRwT1B6shZf1q5oUu4Id7YZQfvMljJFImmGAwQWG9-71mN6Mdg9wi94TK/exec";
+
+  const submitBtn = form.querySelector("button[type='submit']");
+
+  // Create notification container once
+  const notification = document.createElement("div");
+  notification.style.position = "fixed";
+  notification.style.top = "-60px";
+  notification.style.left = "50%";
+  notification.style.transform = "translateX(-50%)";
+  notification.style.backgroundColor = "#28a745";
+  notification.style.color = "#fff";
+  notification.style.padding = "15px 25px";
+  notification.style.borderRadius = "8px";
+  notification.style.fontSize = "15px";
+  notification.style.fontWeight = "600";
+  notification.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+  notification.style.zIndex = "9999";
+  notification.style.transition = "top 0.4s ease";
+  document.body.appendChild(notification);
+
+  function showNotification(message, success = true) {
+    notification.innerText = message;
+    notification.style.backgroundColor = success ? "#28a745" : "#dc3545";
+    notification.style.top = "20px";
+
+    setTimeout(() => {
+      notification.style.top = "-60px";
+    }, 3000);
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Submitting...";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        showNotification("✅ Registration Successful!", true);
+        form.reset();
+      } else {
+        showNotification("❌ Submission failed.", false);
+      }
+
+    } catch (error) {
+      console.error(error);
+      showNotification("❌ Something went wrong.", false);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `REGISTER FOR WORKSHOP <i class="fas fa-arrow-right ml-2"></i>`;
+  });
+
+});
