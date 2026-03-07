@@ -31,17 +31,46 @@
     <meta name="geo.region" content="NG-BN">
     
     <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
+        
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "EducationalOrganization",
+      "@id": "https://tidefitech.com/#organization",
       "name": "TIDEF ITECH",
-      "type": "EducationalBusiness",
-      "image": "https://tidefitech.com/img/Capture-removebg-preview.png",
-      "description": "TIDEF ITECH offers premium tech training and courses in Makurdi, Benue State, Nigeria. Learn Web Development, Data Science, UI/UX Design, Mobile Development, Cybersecurity, and more from industry experts.",
       "url": "https://tidefitech.com",
-      "telephone": "+2349027772815",
-      "email": "tidefitech@gmail.com",
+      "logo": "https://tidefitech.com/img/Capture-removebg-preview.png",
+      "image": "https://tidefitech.com/img/Capture-removebg-preview.png",
+      "description": "TIDEF ITECH is a premier technology hub offering professional digital services and premium tech training in Makurdi. We specialize in Web Development, UI/UX Design, Computer Networking, and Cybersecurity solutions.",
+      "foundingDate": "2023",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 5 Savaida Plaza, George Akume Way",
+        "addressLocality": "Makurdi",
+        "addressRegion": "Benue State",
+        "postalCode": "970001",
+        "addressCountry": "NG"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+2349027772815",
+        "contactType": "customer service",
+        "email": "tidefitech@gmail.com",
+        "availableLanguage": "en"
+      },
+      "sameAs": [
+        "https://www.facebook.com/Tidefitec/"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://tidefitech.com/#localbusiness",
+      "parentOrganization": { "@id": "https://tidefitech.com/#organization" },
+      "name": "TIDEF ITECH",
+      "image": "https://tidefitech.com/img/Capture-removebg-preview.png",
+      "telePhone": "+2349027772815",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "No. 5 Savaida Plaza, George Akume Way",
@@ -55,37 +84,38 @@
         "latitude": "7.7400",
         "longitude": "8.7430"
       },
-      "sameAs": [
-        "https://www.facebook.com/Tidefitec/"
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "TIDEF ITECH",
-      "url": "https://tidefitech.com",
-      "logo": "https://tidefitech.com/img/Capture-removebg-preview.png",
-      "description": "Technology Innovation Hub - Training and development center for tech professionals in Nigeria",
-      "founded": "2023",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "telephone": "+2349027772815",
-        "email": "tidefitech@gmail.com"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "No. 5 Sevida Plaza, George Akume Way",
-        "addressLocality": "Makurdi",
-        "addressRegion": "Benue State",
-        "postalCode": "970001",
-        "addressCountry": "NG"
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tech Services & Training",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Professional Web Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UI/UX Design & Prototyping"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Computer Networking & Cybersecurity"
+            }
+          }
+        ]
       }
     }
-    </script>
+  ]
+}
+</script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
