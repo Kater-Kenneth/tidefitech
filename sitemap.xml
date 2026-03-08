@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://tidefitech.com</loc>
+    <loc>https://www.tidefitech.com</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/about</loc>
+    <loc>https://www.tidefitech.com/about</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/courses</loc>
+    <loc>https://www.tidefitech.com/courses</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/services</loc>
+    <loc>https://www.tidefitech.com/services</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/blog</loc>
+    <loc>https://www.tidefitech.com/blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/contact</loc>
+    <loc>https://www.tidefitech.com/contact</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -45,56 +45,56 @@
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://tidefitech.com/ui-ux-blog</loc>
+    <loc>https://www.tidefitech.com/ui-ux-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/web-dev-blog</loc>
+    <loc>https://www.tidefitech.com/web-dev-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/ai-in-edu-blog</loc>
+    <loc>https://www.tidefitech.com/ai-in-edu-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/cyb-sec-blog</loc>
+    <loc>https://www.tidefitech.com/cyb-sec-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/data-sc-blog</loc>
+    <loc>https://www.tidefitech.com/data-sc-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/mobile-dev-blog</loc>
+    <loc>https://www.tidefitech.com/mobile-dev-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/gett-str-python-blog</loc>
+    <loc>https://www.tidefitech.com/gett-str-python-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/gett-str-rect-n-blog</loc>
+    <loc>https://www.tidefitech.com/gett-str-rect-n-blog</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -102,49 +102,49 @@
   
   <!-- Course Detail Pages -->
   <url>
-    <loc>https://tidefitech.com/web-dev-details</loc>
+    <loc>https://www.tidefitech.com/web-dev-details</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/ux-detail</loc>
+    <loc>https://www.tidefitech.com/ux-detail</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/Digital-design</loc>
+    <loc>https://www.tidefitech.com/Digital-design</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/graphix-detail</loc>
+    <loc>https://www.tidefitech.com/graphix-detail</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/hardware-detail</loc>
+    <loc>https://www.tidefitech.com/hardware-detail</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/comp-app-details</loc>
+    <loc>https://www.tidefitech.com/comp-app-details</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://tidefitech.com/office-admin-details</loc>
+    <loc>https://www.tidefitech.com/office-admin-details</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -152,7 +152,7 @@
   
   <!-- Utility Pages -->
   <url>
-    <loc>https://tidefitech.com/certificate-verification</loc>
+    <loc>https://www.tidefitech.com/certificate-verification</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
