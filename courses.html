@@ -58,6 +58,27 @@
   </script>
 </head>
 <body class="font-sans antialiased">
+  <div id="holiday-modal-overlay" class="holiday-modal-overlay" aria-hidden="true"></div>
+  <div id="holiday-modal" class="holiday-modal" role="dialog" aria-modal="true" aria-labelledby="holiday-modal-title" aria-describedby="holiday-modal-desc">
+    <div class="holiday-modal-panel" tabindex="-1">
+      <button type="button" id="holiday-modal-close" class="holiday-modal-close" aria-label="Close promotion">×</button>
+      <div class="holiday-modal-body">
+        <span class="holiday-modal-badge">Limited Holiday Enrollment</span>
+        <h2 id="holiday-modal-title">🎓 Student Holiday Classes Are Now Open!</h2>
+        <p id="holiday-modal-desc">Enroll now and gain valuable digital skills during the holiday. Limited slots available.</p>
+        <ul class="holiday-modal-features" aria-label="Classes available">
+          <li><i class="fas fa-code"></i>Web Development</li>
+          <li><i class="fas fa-paint-brush"></i>Graphic Design</li>
+          <li><i class="fas fa-robot"></i>Basic Programming & AI Concepts</li>
+          <li><i class="fas fa-desktop"></i>Computer Basics</li>
+        </ul>
+        <div class="holiday-modal-actions">
+          <a href="register.html" class="holiday-modal-button holiday-modal-primary">Register Now</a>
+          <button type="button" id="holiday-modal-cancel" class="holiday-modal-button holiday-modal-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Top Header -->
   <header class="bg-darkBlue text-gray-200 py-3 px-4 md:px-[5%] text-sm flex flex-col md:flex-row justify-between items-center animate-slide-down">
@@ -136,6 +157,21 @@
             <p class="text-primary font-semibold tracking-widest text-sm uppercase mb-3">OUR PROGRAMS</p>
             <h2 class="text-3xl md:text-4xl lg:text-5xl text-darkBlue font-bold leading-tight mb-5">Explore Our <span class="text-primary">Tech Programs</span></h2>
             <p class="text-lightGray max-w-2xl mx-auto text-lg">Discover industry-relevant technology courses designed to launch your career in the digital world</p>
+        </div>
+
+        <!-- Holiday Promo Banner -->
+        <div class="promotion-banner bg-gradient-to-r from-primary to-orange-500 text-white rounded-[1.5rem] shadow-xl p-5 md:p-6 mb-10 scroll-animate">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex-1">
+              <p class="uppercase tracking-[0.35em] text-[0.65rem] font-semibold mb-2 text-white/80">Holiday Class Enrollment</p>
+              <h3 class="text-2xl sm:text-3xl font-bold leading-tight mb-2">🎓 Student Holiday Classes Are Now Open!</h3>
+              <p class="text-sm text-white/90 max-w-2xl">Join the holiday program and strengthen skills in Web Development, Graphic Design, Basic Programming & AI Concepts, and Computer Basics.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+              <a href="register.html" class="inline-flex items-center justify-center bg-white text-darkBlue font-semibold rounded-full px-5 py-3 text-sm shadow-sm transition hover:bg-slate-100">Register Now</a>
+              <a href="#programs" class="inline-flex items-center justify-center border border-white/30 text-white bg-white/10 rounded-full px-5 py-3 text-sm transition hover:bg-white/20">View Courses</a>
+            </div>
+          </div>
         </div>
 
         <!-- Filter Buttons -->

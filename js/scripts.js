@@ -36,6 +36,95 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Holiday modal experience for homepage visitors
+function getHolidayModalElements() {
+    return {
+        overlay: document.getElementById('holiday-modal-overlay'),
+        modal: document.getElementById('holiday-modal'),
+        closeButton: document.getElementById('holiday-modal-close'),
+        cancelButton: document.getElementById('holiday-modal-cancel'),
+        firstFocusable: null,
+        focusableElements: []
+    };
+}
+
+function trapHolidayModalFocus(event, elements) {
+    if (event.key !== 'Tab') return;
+
+    const first = elements[0];
+    const last = elements[elements.length - 1];
+
+    if (event.shiftKey) {
+        if (document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        }
+    } else {
+        if (document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+}
+
+function showHolidayModal() {
+    const { overlay, modal, closeButton, cancelButton } = getHolidayModalElements();
+    if (!overlay || !modal || !closeButton || !cancelButton) return;
+
+    overlay.classList.add('show');
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+
+    const focusable = modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    const focusArray = Array.from(focusable);
+    if (focusArray.length) {
+        focusArray[0].focus();
+    }
+
+    function handleKeydown(event) {
+        if (event.key === 'Escape') {
+            hideHolidayModal(false);
+        }
+        trapHolidayModalFocus(event, focusArray);
+    }
+
+    function closeHandler() {
+        hideHolidayModal(false);
+    }
+
+    overlay.addEventListener('click', closeHandler);
+    closeButton.addEventListener('click', closeHandler);
+    cancelButton.addEventListener('click', closeHandler);
+    document.addEventListener('keydown', handleKeydown);
+
+    modal._holidayModalCleanup = () => {
+        overlay.removeEventListener('click', closeHandler);
+        closeButton.removeEventListener('click', closeHandler);
+        cancelButton.removeEventListener('click', closeHandler);
+        document.removeEventListener('keydown', handleKeydown);
+    };
+}
+
+function hideHolidayModal() {
+    const { overlay, modal } = getHolidayModalElements();
+    if (!overlay || !modal) return;
+
+    overlay.classList.remove('show');
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+
+    if (modal._holidayModalCleanup) {
+        modal._holidayModalCleanup();
+        delete modal._holidayModalCleanup;
+    }
+}
+
+function initHolidayModal() {
+    window.setTimeout(() => {
+        showHolidayModal();
+    }, 600);
+}
+
 // Carousel Functionality
 const slides = document.querySelectorAll('.carousel-slide');
 const indicators = document.querySelectorAll('.carousel-indicator');
@@ -508,6 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize other components
     initVideoPlayer();
     initTestimonialSlider();
+    initHolidayModal();
     
     // Add scroll event listeners
     window.addEventListener('scroll', animateWhyChooseUsOnScroll);
