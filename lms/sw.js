@@ -1,4 +1,4 @@
-const CACHE_NAME = "tidef-lms-v2";
+const CACHE_NAME = "tidef-lms-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -8,8 +8,7 @@ const APP_SHELL = [
   "./css/style.css",
   "./js/config.js",
   "./manifest.webmanifest",
-  "./assets/icons/icon-192.svg",
-  "./assets/icons/icon-512.svg",
+  "../img/Capture-removebg-preview.png",
 ];
 
 self.addEventListener("install", (event) => {
