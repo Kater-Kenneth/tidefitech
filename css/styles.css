@@ -103,6 +103,12 @@ body {
     z-index: 1000;
 }
 
+@media (max-width: 767px) {
+    body {
+        padding-top: 82px;
+    }
+}
+
 .sticky-nav {
     position: fixed;
     top: 0;
