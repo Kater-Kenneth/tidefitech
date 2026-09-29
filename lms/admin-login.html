@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f244a" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>Admin Login | TIDEF ITECH LMS</title>
+    <link
+      rel="icon"
+      href="https://www.tidefitech.com/img/Capture-removebg-preview.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="auth-shell">
+      <div class="auth-visual">
+        <div class="brand">
+          <img
+            src="https://www.tidefitech.com/img/Capture-removebg-preview.png"
+            alt="TIDEF ITECH"
+          />
+          <span class="brand-name">TIDEF ITECH LMS</span>
+        </div>
+        <div>
+          <h2>Manage learning that moves people forward.</h2>
+          <p>
+            Sign in to manage courses, support learners, review submissions, and
+            keep the TIDEF ITECH learning community moving.
+          </p>
+          <ul class="auth-points">
+            <li>📊 Monitor learner progress and activity</li>
+            <li>📚 Manage courses, assignments, and exams</li>
+            <li>🎓 Review certificates and learner outcomes</li>
+          </ul>
+        </div>
+        <p style="font-size: 0.82rem">
+          © 2026 TIDEF ITECH — Makurdi, Benue State
+        </p>
+      </div>
+
+      <div class="auth-form-side">
+        <div class="auth-form-wrap">
+          <div class="eyebrow">STAFF PORTAL</div>
+          <h1>Admin login</h1>
+          <p class="sub">Sign in to access your staff dashboard.</p>
+
+          <div id="form-alert"></div>
+
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input
+                class="input"
+                type="text"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input
+                class="input"
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                required
+              />
+              <div class="hint" style="text-align: right">
+                <a
+                  href="./forgot-password.html"
+                  style="color: var(--navy-800); font-weight: 600"
+                  >Forgot password?</a
+                >
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="login-btn"
+            >
+              Log In
+            </button>
+          </form>
+
+          <p class="switch-link">
+            Are you a student?
+            <a href="./login.html">Go to student login</a>
+          </p>
+          <p class="switch-link">
+            <a href="./index.html">&larr; Back to home</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { getUserProfile, login, logout } from "./js/auth.js";
+      import { ROLE_HOME_PAGE } from "./js/config.js";
+      import {
+        friendlyAuthError,
+        setButtonLoading,
+        clearFieldError,
+      } from "./js/utils.js";
+      import { redirectIfAuthenticated } from "./js/guards.js";
+
+      redirectIfAuthenticated();
+
+      const form = document.getElementById("login-form");
+      const alertBox = document.getElementById("form-alert");
+      const loginBtn = document.getElementById("login-btn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        alertBox.innerHTML = "";
+        const emailEl = document.getElementById("email");
+        const passwordEl = document.getElementById("password");
+        clearFieldError(emailEl);
+        clearFieldError(passwordEl);
+
+        setButtonLoading(loginBtn, true, "Logging in…");
+        try {
+          const user = await login(emailEl.value.trim(), passwordEl.value);
+
+          if (!user.email_confirmed_at) {
+            window.location.href = `./verify-email.html?identifier=${encodeURIComponent(user.email)}`;
+            return;
+          }
+          const profile = await getUserProfile(user.id);
+          if (!["teacher", "admin", "super_admin"].includes(profile?.role)) {
+            await logout();
+            throw new Error(
+              "Student accounts must use the student login page.",
+            );
+          }
+          window.location.href =
+            ROLE_HOME_PAGE[profile.role] || "./admin/dashboard.html";
+        } catch (err) {
+          if (err?.message?.toLowerCase().includes("email not confirmed")) {
+            window.location.href = `./verify-email.html?identifier=${encodeURIComponent(emailEl.value.trim())}`;
+            return;
+          }
+          alertBox.innerHTML = `<div class="alert alert-danger">${friendlyAuthError(err)}</div>`;
+          setButtonLoading(loginBtn, false);
+        }
+      });
+    </script>
+    <script type="module" src="./js/pwa.js"></script>
+    <script type="module" src="./js/whatsapp.js"></script>
+  </body>
+</html>

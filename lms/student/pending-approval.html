@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Pending | TIDEF ITECH LMS</title>
+    <link
+      rel="icon"
+      href="https://www.tidefitech.com/img/Capture-removebg-preview.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body
+    style="
+      background: var(--gradient-brand);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    "
+  >
+    <div class="card" style="max-width: 540px; width: 100%; text-align: center">
+      <img
+        src="https://www.tidefitech.com/img/Capture-removebg-preview.png"
+        alt="TIDEF ITECH"
+        style="height: 44px; margin: 0 auto 20px"
+      />
+      <div id="status-content">
+        <div class="spinner" style="margin: 0 auto 16px"></div>
+        <p>Loading your account status…</p>
+      </div>
+      <button class="btn btn-ghost mt-4" id="logout-btn">Log out</button>
+    </div>
+
+    <script type="module">
+      import { onAuthReady, logout } from "../js/auth.js";
+      import { ROLE_HOME_PAGE } from "../js/config.js";
+      import { getSettings } from "../js/admin.js";
+
+      onAuthReady(async ({ user, profile }) => {
+        if (!user) {
+          window.location.href = "../login.html";
+          return;
+        }
+        if (!user.email_confirmed_at) {
+          window.location.href = `../verify-email.html?identifier=${encodeURIComponent(user.email)}`;
+          return;
+        }
+        if (!profile) return;
+
+        if (profile.role !== "student") {
+          window.location.href =
+            ROLE_HOME_PAGE[profile.role] || "../login.html";
+          return;
+        }
+        if (profile.account_status === "approved") {
+          window.location.href = "./dashboard.html";
+          return;
+        }
+
+        const content = document.getElementById("status-content");
+
+        if (profile.account_status === "suspended") {
+          let supportPhone = "+234 902 777 2815";
+          try {
+            const settings = await getSettings();
+            if (settings.support_phone) supportPhone = settings.support_phone;
+          } catch {
+            /* fall back to the default above */
+          }
+          content.innerHTML = `
+        <h1>Your account is suspended</h1>
+        <p>Please contact TIDEF ITECH admissions for help: <a href="tel:${supportPhone.replace(/\s+/g, "")}">${supportPhone}</a></p>`;
+          return;
+        }
+
+        const paymentStatus = profile.payment_status;
+        let paymentBlock = "";
+        let ctaButton = "";
+
+        if (paymentStatus === "not_submitted") {
+          paymentBlock = `
+        <div class="alert alert-info">You haven't told us you've paid yet. Once you've made your payment to TIDEF ITECH directly, let us know below.</div>`;
+          ctaButton = `<a href="./payment.html" class="btn btn-primary btn-block mt-4">I Have Completed Payment</a>`;
+        } else if (paymentStatus === "pending_verification") {
+          paymentBlock = `
+        <div class="alert alert-warning">Thanks — we've received your payment confirmation and it's waiting for an admin to verify it against our records. This usually doesn't take long.</div>`;
+          ctaButton = `<a href="./payment.html" class="btn btn-outline btn-block mt-4">View Submission Details</a>`;
+        } else if (paymentStatus === "rejected") {
+          paymentBlock = `
+        <div class="alert alert-danger">We couldn't verify your last payment confirmation. See the reason and submit a new confirmation once resolved.</div>`;
+          ctaButton = `<a href="./payment.html" class="btn btn-primary btn-block mt-4">Review & Resubmit</a>`;
+        }
+
+        content.innerHTML = `
+      <h1>Your account is being reviewed</h1>
+      <p>Hi ${profile.full_name?.split(" ")[0] || "there"}, your registration was received. Here's where things stand:</p>
+      ${paymentBlock}
+      ${ctaButton}
+      <p class="text-secondary mt-4">Once TIDEF ITECH confirms your payment, your course access will unlock automatically and you'll see it right here.</p>
+      <div class="alert alert-info mt-4" style="text-align:left;">
+        <strong>Third-Party Educational Content Notice</strong>
+        <p style="margin:8px 0 0;">This program utilizes curated public educational content, including videos hosted on YouTube, to deliver certain parts of the learning path. You are not being charged for these videos. All embedded or linked third-party videos remain the intellectual property of their respective creators and are freely accessible to the public directly on their original platforms. TIDEF ITECH does not claim ownership of, nor do we monetize, these external video materials. Your payment is solely for the platform infrastructure, evaluation services, mentorship, and community support we provide.</p>
+      </div>
+      <details style="text-align:left; margin-top:16px;">
+        <summary style="cursor:pointer; font-weight:600; color:var(--navy-800);">Terms of Service</summary>
+        <p class="text-secondary" style="margin-top:10px;">By using TIDEF ITECH LMS, you agree to provide accurate account information, keep your login details private, use learning materials lawfully, and follow our community standards. Payments cover the platform infrastructure, evaluation services, mentorship, and community support provided by TIDEF ITECH. Access may be suspended for misuse, fraud, or violation of these terms.</p>
+      </details>
+      <p style="text-align:left; margin-top:16px;">
+        Need help with payment or verification?
+        <a href="https://wa.me/2349027772815?text=Hello%20TIDEF%20ITECH%2C%20I%20need%20help%20with%20payment%20or%20payment%20verification%20for%20my%20LMS%20account." target="_blank" rel="noopener noreferrer" style="color:var(--navy-800); font-weight:600;">Contact TIDEF ITECH on WhatsApp</a>
+      </p>
+    `;
+      });
+
+      document
+        .getElementById("logout-btn")
+        .addEventListener("click", async () => {
+          await logout();
+          window.location.href = "../login.html";
+        });
+    </script>
+  </body>
+</html>
