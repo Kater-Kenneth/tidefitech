@@ -201,7 +201,11 @@
               >View learning options <span aria-hidden="true">&rarr;</span></a
             >
           </div>
-          <div id="public-courses" class="landing-course-grid" aria-live="polite">
+          <div
+            id="public-courses"
+            class="landing-course-grid"
+            aria-live="polite"
+          >
             <div class="landing-course-state">
               <div class="spinner"></div>
               <p>Loading available courses…</p>
@@ -355,13 +359,17 @@
       const courseGrid = document.getElementById("public-courses");
 
       function escapeHtml(value = "") {
-        return String(value).replace(/[&<>'"]/g, (character) => ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          "'": "&#39;",
-          '"': "&quot;",
-        })[character]);
+        return String(value).replace(
+          /[&<>'"]/g,
+          (character) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              "'": "&#39;",
+              '"': "&quot;",
+            })[character],
+        );
       }
 
       async function loadPublicCourses() {
@@ -384,7 +392,8 @@
           }
 
           courseGrid.innerHTML = data
-            .map((course, index) => `
+            .map(
+              (course, index) => `
               <article class="landing-course-card">
                 <div class="landing-course-number">0${index + 1}</div>
                 <div class="landing-course-body">
@@ -393,7 +402,8 @@
                   <p>${escapeHtml(course.description || "Build practical skills with guided lessons, useful assessments, and support from the TIDEF ITECH community.")}</p>
                   <a class="landing-text-link" href="./register.html">Start this path <span aria-hidden="true">&rarr;</span></a>
                 </div>
-              </article>`)
+              </article>`,
+            )
             .join("");
         } catch {
           courseGrid.innerHTML = `
