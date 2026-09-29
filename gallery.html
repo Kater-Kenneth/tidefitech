@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>TIDEF ITECH - Gallery</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+		<style>
+			.lightbox {position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);z-index:60}
+			.lightbox.open{display:flex}
+			.lightbox img{max-width:90%;max-height:85%;border-radius:8px}
+			.gallery-caption{margin-top:.5rem;color:#475569}
+		</style>
+	</head>
+	<body class="bg-gray-50 font-sans">
+		<!-- Simple nav -->
+		<nav class="bg-darkGray text-white py-3 px-6 md:px-[5%]">
+			<div class="max-w-7xl mx-auto flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<img src="img/Capture-removebg-preview.png" alt="logo" class="h-10">
+					<span class="font-bold text-xl">TIDEF <span class="text-primary">ITECH</span></span>
+				</div>
+				<div class="hidden md:flex gap-6">
+					<a href="index.html" class="hover:text-primary">Home</a>
+					<a href="about.html" class="hover:text-primary">About</a>
+					<a href="contact.html" class="hover:text-primary">Contact</a>
+				</div>
+			</div>
+		</nav>
+
+		<main class="py-12 px-6 md:px-[5%]">
+			<div class="max-w-5xl mx-auto text-center mb-8">
+				<p class="text-primary font-semibold uppercase text-sm mb-2"><i class="fas fa-images mr-2"></i>Gallery</p>
+				<h1 class="text-3xl font-bold text-darkBlue mb-2">TIDEF ITECH Gallery</h1>
+				<p class="text-gray-500">Click any image to enlarge. New uploads are labelled as <strong>asd1</strong>–<strong>asd6</strong>.</p>
+			</div>
+
+			<section class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					<!-- Main gallery items -->
+					<!-- 1 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0030.jpg" data-title="Coding Lab Sessions">
+							<img src="img/IMG-20250325-WA0030.jpg" alt="Coding Lab Sessions" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Coding Lab Sessions</strong>
+							<div class="text-sm">Students collaborating on projects in our advanced coding lab</div>
+						</figcaption>
+					</figure>
+
+					<!-- 2 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0018.jpg" data-title="Open Workspace">
+							<img src="img/IMG-20250325-WA0018.jpg" alt="Open Workspace" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Open Workspace</strong>
+							<div class="text-sm">Learners using individual workstations</div>
+						</figcaption>
+					</figure>
+
+					<!-- 3 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG_4516.JPG" data-title="Graduation Day">
+							<img src="img/IMG_4516.JPG" alt="Graduation Day" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Graduation Day</strong>
+							<div class="text-sm">Celebrating the success of our graduates</div>
+						</figcaption>
+					</figure>
+
+					<!-- 4 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/👩🏾_💻👸🏽.jpg" data-title="Student Support">
+							<img src="img/👩🏾_💻👸🏽.jpg" alt="Student Support" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Student Support</strong>
+							<div class="text-sm">Hands-on guidance from instructors</div>
+						</figcaption>
+					</figure>
+
+					<!-- 5 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/Groupe d'étude des peuples africains _ Photo Gratuite.jpg" data-title="Project Demonstrations">
+							<img src="img/Groupe d'étude des peuples africains _ Photo Gratuite.jpg" alt="Project Demonstrations" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Project Demonstrations</strong>
+							<div class="text-sm">Students present practical project work</div>
+						</figcaption>
+					</figure>
+
+					<!-- 6 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/Tidef Itech.jpg" data-title="Our Campus">
+							<img src="img/Tidef Itech.jpg" alt="Our Campus" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Our Campus</strong>
+							<div class="text-sm">Modern learning facilities at TIDEF ITECH</div>
+						</figcaption>
+					</figure>
+
+					<!-- New uploads labelled asd1 - asd6 -->
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0036.jpg" data-title="Collaborative Learning (asd1)">
+							<img src="img/IMG-20250325-WA0036.jpg" alt="Collaborative Learning" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Collaborative Learning — asd1</strong>
+						</figcaption>
+					</figure>
+
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0039.jpg" data-title="Workstations (asd2)">
+							<img src="img/IMG-20250325-WA0039.jpg" alt="Workstations" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Workstations — asd2</strong>
+						</figcaption>
+					</figure>
+
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0021.jpg" data-title="Training Lab (asd3)">
+							<img src="img/IMG-20250325-WA0021.jpg" alt="Training Lab" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Training Lab — asd3</strong>
+						</figcaption>
+					</figure>
+
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0030.jpg" data-title="Coding Lab (asd4)">
+							<img src="img/IMG-20250325-WA0030.jpg" alt="Coding Lab" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Coding Lab — asd4</strong>
+						</figcaption>
+					</figure>
+
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG-20250325-WA0018.jpg" data-title="Open Workspace (asd5)">
+							<img src="img/IMG-20250325-WA0018.jpg" alt="Open Workspace" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Open Workspace — asd5</strong>
+						</figcaption>
+					</figure>
+
+					<figure class="group">
+						<button class="w-full block overflow-hidden rounded-2xl shadow-lg" data-src="img/IMG_4516.JPG" data-title="Graduation (asd6)">
+							<img src="img/IMG_4516.JPG" alt="Graduation" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+						</button>
+						<figcaption class="gallery-caption text-center">
+							<strong>Graduation — asd6</strong>
+						</figcaption>
+					</figure>
+
+				</div>
+			</section>
+
+			<div class="max-w-7xl mx-auto text-center mt-10">
+				<a href="index.html" class="inline-flex items-center bg-darkBlue text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary transition-colors"><i class="fas fa-arrow-left mr-3"></i>Back to Home</a>
+			</div>
+		</main>
+
+		<!-- Lightbox -->
+		<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+			<button id="lb-close" class="absolute top-6 right-6 text-white text-2xl">&times;</button>
+			<img id="lb-img" src="" alt="">
+			<div id="lb-title" class="absolute bottom-6 text-white text-center w-full"></div>
+		</div>
+
+		<script>
+			// simple lightbox
+			document.querySelectorAll('button[data-src]').forEach(btn=>{
+				btn.addEventListener('click',()=>{
+					const src=btn.getAttribute('data-src');
+					const title=btn.getAttribute('data-title')||'';
+					document.getElementById('lb-img').src=src;
+					document.getElementById('lb-title').textContent=title;
+					document.getElementById('lightbox').classList.add('open');
+				})
+			})
+			document.getElementById('lb-close').addEventListener('click',()=>document.getElementById('lightbox').classList.remove('open'))
+			document.getElementById('lightbox').addEventListener('click',(e)=>{ if(e.target.id==='lightbox') document.getElementById('lightbox').classList.remove('open')})
+		</script>
+	</body>
+</html>
