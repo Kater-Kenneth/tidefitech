@@ -11,6 +11,7 @@
 // =========================================================
 
 import { supabase } from "./supabase.js";
+import { LMS_SITE_URL } from "./config.js";
 
 /**
  * Register a new student account.
@@ -93,42 +94,25 @@ export async function emailExists(email) {
   return data === true;
 }
 
-/**
- * Send a password-reset OTP instead of a recovery link.
- * This matches the LMS's email verification flow and avoids localhost redirect issues.
- */
+/** Send a password-reset link to the canonical LMS reset page. */
 export async function requestPasswordReset(email) {
   const normalizedEmail = String(email || "").trim();
   if (!normalizedEmail) throw new Error("Email is required.");
 
-  const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail);
-
-  if (error) throw error;
-}
-
-/** Verify the password-reset OTP and sign the user in. */
-export async function verifyPasswordResetOtp(email, token) {
-  const normalizedEmail = String(email || "").trim();
-  const normalizedToken = String(token || "").trim();
-
-  if (!normalizedEmail || !normalizedToken) {
-    throw new Error("Email and verification code are required.");
-  }
-
-  const { data, error } = await supabase.auth.verifyOtp({
-    email: normalizedEmail,
-    token: normalizedToken,
-    type: "recovery",
+  const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail, {
+    redirectTo: `${LMS_SITE_URL}/reset-password`,
   });
 
   if (error) throw error;
-  return data.user;
 }
 
-/** Set a new password after the OTP has been verified and the user is signed in. */
+/** Set a new password after the recovery link signs the user in. */
 export async function setNewPassword(newPassword) {
-  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  const { data, error } = await supabase.auth.updateUser({
+    password: newPassword,
+  });
   if (error) throw error;
+  return data.user;
 }
 
 /** Fetch the profiles row for a given user id. */
@@ -146,7 +130,7 @@ export async function getUserProfile(uid) {
  * Ask the Supabase server directly whether we currently have a
  * signed-in, email-confirmed user. Unlike getSession() (which reads the
  * local token), getUser() always round-trips to the server, so it's the
- * right call after an email OTP has created a session.
+ * right call after an email confirmation or recovery link creates a session.
  */
 export async function getFreshUser() {
   const { data, error } = await supabase.auth.getUser();

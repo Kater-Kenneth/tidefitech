@@ -85,6 +85,7 @@
         deleteComment,
       } from "../js/community.js";
       import { uploadFile, getSignedUrl } from "../js/storage.js";
+      import { resolvePhotoUrls } from "../js/google-drive.js";
       import {
         escapeHtml,
         formatDateTime,
@@ -153,13 +154,18 @@
             return;
           }
           feed.innerHTML = "";
-          for (const p of posts) feed.appendChild(await renderPost(p));
+          const photoUrls = await resolvePhotoUrls(
+            posts.map((post) => post.profiles?.profile_photo_url),
+          );
+          for (const [index, post] of posts.entries()) {
+            feed.appendChild(await renderPost(post, photoUrls[index]));
+          }
         } catch (err) {
           feed.innerHTML = `<div class="alert alert-danger">Couldn't load the feed.</div>`;
         }
       }
 
-      async function renderPost(p) {
+      async function renderPost(p, authorPhotoUrl) {
         const card = document.createElement("div");
         card.className = "post-card";
         const authorProfile = p.profiles || {};
@@ -193,6 +199,15 @@
         </form>
       </div>
     `;
+
+        if (authorPhotoUrl) {
+          const image = document.createElement("img");
+          image.src = authorPhotoUrl;
+          image.alt = "";
+          image.style.cssText =
+            "width:100%;height:100%;object-fit:cover;border-radius:50%;";
+          card.querySelector(".post-avatar").replaceChildren(image);
+        }
 
         card
           .querySelector('[data-action="delete-post"]')

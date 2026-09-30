@@ -1,4 +1,5 @@
 import { supabase } from "./supabase.js";
+import { SUPABASE_STORAGE_BUCKETS } from "./config.js";
 
 const MAX_PASSPORT_BYTES = 5 * 1024 * 1024;
 const ALLOWED_PASSPORT_TYPES = new Set([
@@ -6,30 +7,27 @@ const ALLOWED_PASSPORT_TYPES = new Set([
   "image/png",
   "image/webp",
 ]);
+const FILE_EXTENSIONS = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+};
 
-const PROFILE_PHOTOS_BUCKET = "profile-photos";
-const PASSPORT_BUCKET = "passport-photos";
+const PROFILE_PHOTOS_BUCKET = SUPABASE_STORAGE_BUCKETS.PROFILE_PHOTOS;
+const PASSPORT_BUCKET = SUPABASE_STORAGE_BUCKETS.PASSPORT;
+const PRIVATE_PHOTO_PREFIX = "supabase-storage://";
 
-function sanitizeFileName(fileName) {
-  const base = (fileName || "passport").replace(/\.[^.]+$/, "");
-  const clean = base.replace(/[^a-zA-Z0-9_-]+/g, "_").replace(/^_+|_+$/g, "");
-  return (clean || "passport") + `_${Date.now()}`;
-}
-
-function buildStoragePath(file, email) {
-  const safeName = sanitizeFileName(file.name);
-  const extension = (file.name.split(".").pop() || "jpg").toLowerCase();
-  return `${safeName}.${extension}`;
+function buildStoragePath(file, folder) {
+  return `${folder}/${crypto.randomUUID()}.${FILE_EXTENSIONS[file.type]}`;
 }
 
 /**
  * Upload a passport image to Supabase Storage.
  *
- * If the user is already signed in, store it in the private profile-photos bucket.
- * During signup, the user is not yet authenticated, so the upload falls back to a
- * public passport-photos bucket that must be created in the Supabase dashboard.
+ * Signup uploads are private and write-only for anonymous users. Signed-in
+ * profile uploads use the user's folder in the private profile-photos bucket.
  */
-export async function uploadPassport(file, email) {
+export async function uploadPassport(file) {
   if (!ALLOWED_PASSPORT_TYPES.has(file.type)) {
     throw new Error("Upload a JPG, PNG, or WebP passport photograph.");
   }
@@ -40,8 +38,8 @@ export async function uploadPassport(file, email) {
   const { data: userData, error: userError } = await supabase.auth.getUser();
   const isAuthenticated = !userError && !!userData?.user;
   const bucket = isAuthenticated ? PROFILE_PHOTOS_BUCKET : PASSPORT_BUCKET;
-  const folder = isAuthenticated ? userData.user.id : encodeURIComponent((email || "guest").toLowerCase());
-  const path = `${folder}/${buildStoragePath(file, email)}`;
+  const folder = isAuthenticated ? userData.user.id : "signup";
+  const path = buildStoragePath(file, folder);
 
   const { error } = await supabase.storage.from(bucket).upload(path, file, {
     upsert: false,
@@ -52,28 +50,50 @@ export async function uploadPassport(file, email) {
     const message = String(error.message || "").toLowerCase();
     if (message.includes("bucket") || message.includes("not found")) {
       throw new Error(
-        "Supabase storage is not configured yet. Create a public bucket named 'passport-photos' in the Storage dashboard, then retry.",
+        "Supabase Storage is not configured. Apply migration 0021_passport_storage.sql, then retry.",
       );
     }
     throw error;
   }
 
-  if (isAuthenticated) {
-    const { data, error: signedUrlError } = await supabase.storage
-      .from(bucket)
-      .createSignedUrl(path, 60 * 60 * 24 * 7);
+  return `${PRIVATE_PHOTO_PREFIX}${bucket}/${path}`;
+}
 
-    if (!signedUrlError && data?.signedUrl) {
-      return data.signedUrl;
-    }
-  }
+export async function resolvePhotoUrl(value) {
+  return (await resolvePhotoUrls([value]))[0];
+}
 
-  const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-  if (!data?.publicUrl) {
-    throw new Error("Passport upload succeeded but a public URL could not be generated.");
-  }
+export async function resolvePhotoUrls(values) {
+  const resolved = values.map((value) =>
+    value ? toDriveImageUrl(value) : null,
+  );
+  const groupedPaths = new Map();
 
-  return data.publicUrl;
+  values.forEach((value, index) => {
+    const match = value?.match(
+      /^supabase-storage:\/\/(passport-photos|profile-photos)\/(.+)$/,
+    );
+    if (!match) return;
+    const entries = groupedPaths.get(match[1]) || [];
+    entries.push({ path: match[2], index });
+    groupedPaths.set(match[1], entries);
+  });
+
+  await Promise.all(
+    [...groupedPaths].map(async ([bucket, entries]) => {
+      const { data, error } = await supabase.storage
+        .from(bucket)
+        .createSignedUrls(
+          entries.map((entry) => entry.path),
+          60 * 60,
+        );
+      entries.forEach((entry, index) => {
+        resolved[entry.index] = error ? null : data?.[index]?.signedUrl || null;
+      });
+    }),
+  );
+
+  return resolved;
 }
 
 /**

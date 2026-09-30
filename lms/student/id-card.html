@@ -166,7 +166,7 @@
     <script type="module">
       import { requireAuth } from "../js/guards.js";
       import { renderAppShell } from "../js/components.js";
-      import { toDriveImageUrl } from "../js/google-drive.js";
+      import { resolvePhotoUrl } from "../js/google-drive.js";
       import { escapeHtml, getInitials } from "../js/utils.js";
 
       const { profile } = await requireAuth({ allowedRoles: ["student"] });
@@ -184,8 +184,11 @@
           `TIDEF ITECH student ID: ${profile.student_id}`,
         );
         const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${qrData}`;
-        const photo = profile.profile_photo_url
-          ? `<img src="${escapeHtml(toDriveImageUrl(profile.profile_photo_url))}" alt="${escapeHtml(profile.full_name || "Student photo")}" />`
+        const resolvedPhotoUrl = await resolvePhotoUrl(
+          profile.profile_photo_url,
+        );
+        const photo = resolvedPhotoUrl
+          ? `<img src="${escapeHtml(resolvedPhotoUrl)}" alt="${escapeHtml(profile.full_name || "Student photo")}" />`
           : escapeHtml(getInitials(profile.full_name));
 
         content.innerHTML = `

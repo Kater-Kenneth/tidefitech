@@ -24,23 +24,17 @@ by an admin action in Phase 2).
 Never use the **service_role** key here — that key bypasses Row Level
 Security entirely and must never be shipped to a browser.
 
-## Passport uploads to Google Drive
+## Passport uploads to Supabase Storage
 
-Registration requires a passport photograph. The browser uploads it through
-the Google Apps Script in `google-drive-upload.gs`; Google Drive credentials
-never go into the LMS. To enable it:
-
-1. Create a Drive folder and copy its folder ID into `DRIVE_FOLDER_ID` in
-   `google-drive-upload.gs`.
-2. Deploy the script as a Web app, executing as you, accessible to anyone.
-3. Paste the deployed `/exec` URL into `GOOGLE_DRIVE_UPLOAD_URL` in
-   `js/config.js`.
-4. Run `supabase/migrations/0017_passport_drive_url.sql` in the Supabase SQL
-   editor.
-
-The migration stores the returned Drive view link in
-`profiles.profile_photo_url`, so the existing dashboard avatar and ID card can
-display the passport photograph.
+Registration uploads passport photographs to the private `passport-photos`
+bucket. Apply `supabase/migrations/0017_passport_drive_url.sql` and
+`supabase/migrations/0021_passport_storage.sql` after the initial schema
+migration. Migration 0021 creates the bucket with a 5 MB limit and JPEG, PNG,
+and WebP restrictions, permits signup uploads without public reads, and limits
+signed photo reads to authenticated LMS users. Passport photos are displayed
+beside community post authors; they are not publicly accessible without an LMS
+session. No Google Apps Script setup is needed. The separate private
+`profile-photos` bucket handles authenticated profile-photo updates.
 
 ## Live classes and notifications
 
@@ -63,14 +57,16 @@ This creates the `profiles`, `courses`, `payment_confirmations`,
 `payment_approval_logs`, and `notifications` tables, the trigger that
 auto-creates a profile row on signup, the trigger that blocks
 self-privilege-escalation, all the Row Level Security policies, and the
-`profile-photos` storage bucket with its access policies.
+`profile-photos` storage bucket with its access policies. Also apply
+`0017_passport_drive_url.sql` and `0021_passport_storage.sql` for passport
+uploads and the signup metadata trigger.
 
 (If you prefer the CLI/migrations workflow instead of pasting into the
 dashboard: `npm install -g supabase`, `supabase login`, `supabase link
 --project-ref your-project-ref`, then `supabase db push` from this
 folder — it picks up everything under `supabase/migrations/` automatically.)
 
-## 4. Configure OTP verification
+## 4. Configure email verification and password reset
 
 1. **Authentication → Providers → Email** — make sure **Confirm email**
    is switched **on**. First click **Set up SMTP** on the Email Templates
@@ -91,16 +87,25 @@ folder — it picks up everything under `supabase/migrations/` automatically.)
 ```
 
 The registration page verifies this code with `verifyOtp`. In **Authentication
-→ Email Templates → Reset Password**, use `{{ .Token }}` for the code and
-remove `{{ .ConfirmationURL }}` if you want an OTP-only reset flow. The reset
-page verifies this token with the `recovery` OTP type. 3. **Authentication →
-URL Configuration** — set:
+→ Email Templates → Reset Password**, keep the confirmation link and point it
+to the reset page:
 
-- **Site URL**: wherever you'll host this (e.g. `https://lms.tidefitech.com`,
-  or `http://localhost:3000` while testing locally)
-- **Redirect URLs**: add `/verify-email.html` under that same origin for
-  signup verification. Password reset uses an OTP and does not require an
-  email redirect URL.
+```html
+<h2>Reset your password</h2>
+<p>Follow this link to choose a new password:</p>
+<p><a href="{{ .ConfirmationURL }}">Reset password</a></p>
+<p>If you did not request this, you can safely ignore this email.</p>
+```
+
+The reset request redirects to the exact URL
+`https://www.tidefitech.com/lms/reset-password`. In **Authentication → URL
+Configuration**, set:
+
+- **Site URL**: `https://www.tidefitech.com/lms`
+- **Redirect URLs**: allow
+  `https://www.tidefitech.com/lms/reset-password`. The reset request pins
+  recovery links to the canonical reset page instead of using the dashboard's
+  default Site URL.
 
 ## 5. Run it locally
 

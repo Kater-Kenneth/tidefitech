@@ -69,7 +69,7 @@
     <script type="module">
       import { requireAuth } from "../js/guards.js";
       import { renderAppShell } from "../js/components.js";
-      import { uploadPassport, toDriveImageUrl } from "../js/google-drive.js";
+      import { uploadPassport, resolvePhotoUrl } from "../js/google-drive.js";
       import { supabase } from "../js/supabase.js";
       import {
         escapeHtml,
@@ -88,7 +88,7 @@
         activeHref: "profile.html",
       });
 
-      const photoUrl = toDriveImageUrl(profile.profile_photo_url);
+      const photoUrl = await resolvePhotoUrl(profile.profile_photo_url);
       content.innerHTML = `
         <div class="card">
           <div class="profile-layout">
@@ -128,7 +128,11 @@
 
           setButtonLoading(button, true, "Uploading…");
           try {
-            const url = await uploadPassport(file, user.email);
+            const url = await uploadPassport(file);
+            const photoUrl = await resolvePhotoUrl(url);
+            if (!photoUrl) {
+              throw new Error("Could not create a secure profile photo URL.");
+            }
             const { error } = await supabase
               .from("profiles")
               .update({
@@ -137,8 +141,10 @@
               })
               .eq("id", user.id);
             if (error) throw error;
-            document.getElementById("profile-photo").innerHTML =
-              `<img src="${escapeHtml(url)}" alt="Profile photo" />`;
+            const image = document.createElement("img");
+            image.src = photoUrl;
+            image.alt = "Profile photo";
+            document.getElementById("profile-photo").replaceChildren(image);
             document.getElementById("photo-status").textContent =
               "Profile picture updated successfully.";
             input.value = "";

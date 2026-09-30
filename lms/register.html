@@ -177,23 +177,6 @@
             </button>
           </form>
 
-          <div
-            class="alert alert-info"
-            style="text-align: left; margin-top: 16px"
-          >
-            <strong>Third-Party Educational Content Notice</strong>
-            <p style="margin: 8px 0 0">
-              This program utilizes curated public educational content,
-              including videos hosted on YouTube, to deliver certain parts of
-              the learning path. You are not being charged for these videos. All
-              embedded or linked third-party videos remain the intellectual
-              property of their respective creators and are freely accessible to
-              the public directly on their original platforms. TIDEF ITECH does
-              not claim ownership of, nor do we monetize, these external video
-              materials. Your payment is solely for the platform infrastructure,
-              evaluation services, mentorship, and community support we provide.
-            </p>
-          </div>
           <label
             style="
               display: flex;
@@ -215,9 +198,28 @@
                 href="#terms-of-service"
                 style="color: var(--navy-800); font-weight: 600"
                 >Terms of Service</a
-              >, including the Third-Party Educational Content Notice.</span
+              >
+              and Third-Party Educational Content Notice.</span
             >
           </label>
+          <details id="educational-content-notice" style="margin-top: 12px">
+            <summary
+              style="cursor: pointer; font-weight: 600; color: var(--navy-800)"
+            >
+              Read Third-Party Educational Content Notice
+            </summary>
+            <p class="text-secondary" style="margin-top: 10px">
+              This program utilizes curated public educational content,
+              including videos hosted on YouTube, to deliver certain parts of
+              the learning path. You are not being charged for these videos. All
+              embedded or linked third-party videos remain the intellectual
+              property of their respective creators and are freely accessible to
+              the public directly on their original platforms. TIDEF ITECH does
+              not claim ownership of, nor do we monetize, these external video
+              materials. Your payment is solely for the platform infrastructure,
+              evaluation services, mentorship, and community support we provide.
+            </p>
+          </details>
           <details id="terms-of-service" style="margin-top: 12px">
             <summary
               style="cursor: pointer; font-weight: 600; color: var(--navy-800)"
@@ -227,15 +229,8 @@
             <p class="text-secondary" style="margin-top: 10px">
               You agree to provide accurate information, protect your account
               credentials, use the LMS and its materials lawfully, and follow
-              TIDEF ITECH community standards. This program uses curated public
-              educational content, including YouTube videos, and you are not
-              charged for those videos. Third-party videos remain the
-              intellectual property of their creators, are freely available on
-              their original platforms, and are not monetized or owned by TIDEF
-              ITECH. Your payment is solely for platform infrastructure,
-              evaluation services, mentorship, and community support. TIDEF
-              ITECH may suspend access for misuse, fraud, or violation of these
-              terms.
+              TIDEF ITECH community standards. TIDEF ITECH may suspend access
+              for misuse, fraud, or violation of these terms.
             </p>
           </details>
 
@@ -250,7 +245,6 @@
       import { emailExists, registerStudent } from "./js/auth.js";
       import { uploadPassport } from "./js/google-drive.js";
       import {
-        friendlyAuthError,
         setButtonLoading,
         setFieldError,
         clearFieldError,
@@ -341,10 +335,7 @@
             setButtonLoading(registerBtn, false);
             return;
           }
-          const passportUrl = await uploadPassport(
-            passport.files[0],
-            email.value.trim(),
-          );
+          const passportUrl = await uploadPassport(passport.files[0]);
           await registerStudent({
             fullName: fullName.value.trim(),
             email: email.value.trim(),
@@ -362,7 +353,12 @@
           );
           window.location.href = `./verify-email.html?identifier=${encodeURIComponent(email.value.trim())}`;
         } catch (err) {
-          alertBox.innerHTML = `<div class="alert alert-danger">${friendlyAuthError(err)}</div>`;
+          console.error("Registration failed.", err);
+          const errorAlert = document.createElement("div");
+          errorAlert.className = "alert alert-danger";
+          errorAlert.textContent =
+            "We couldn't complete your registration. Please try again. If the problem continues, contact support.";
+          alertBox.replaceChildren(errorAlert);
           setButtonLoading(registerBtn, false);
         }
       });

@@ -42,7 +42,7 @@
       import { requireAuth } from "../js/guards.js";
       import { renderAppShell } from "../js/components.js";
       import { getAllUsers, setAccountStatus } from "../js/admin.js";
-      import { toDriveImageUrl } from "../js/google-drive.js";
+      import { resolvePhotoUrls } from "../js/google-drive.js";
       import {
         escapeHtml,
         formatDate,
@@ -101,13 +101,19 @@
             return;
           }
           list.innerHTML = "";
-          students.forEach((s) => list.appendChild(renderRow(s)));
+          const photoUrls = await resolvePhotoUrls(
+            students.map((student) => student.profile_photo_url),
+          );
+          const rows = students.map((student, index) =>
+            renderRow(student, photoUrls[index]),
+          );
+          list.replaceChildren(...rows);
         } catch (err) {
           list.innerHTML = `<div class="alert alert-danger">Couldn't load students.</div>`;
         }
       }
 
-      function renderRow(s) {
+      function renderRow(s, photoUrl) {
         const row = document.createElement("div");
         row.className = "s-row";
         const statusBadge =
@@ -127,19 +133,15 @@
 
         row.innerHTML = `
       <div class="flex items-center gap-3">
-        <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:var(--off-white);display:flex;align-items:center;justify-content:center;color:var(--navy-800);font-weight:700;flex-shrink:0;">
-          ${
-            s.profile_photo_url
-              ? `<img src="${toDriveImageUrl(s.profile_photo_url)}" alt="" style="width:100%;height:100%;object-fit:cover;" />`
-              : escapeHtml(
-                  (s.full_name || "S")
-                    .split(" ")
-                    .map((part) => part[0])
-                    .join("")
-                    .slice(0, 2)
-                    .toUpperCase(),
-                )
-          }
+        <div class="student-photo" style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:var(--off-white);display:flex;align-items:center;justify-content:center;color:var(--navy-800);font-weight:700;flex-shrink:0;">
+          ${escapeHtml(
+            (s.full_name || "S")
+              .split(" ")
+              .map((part) => part[0])
+              .join("")
+              .slice(0, 2)
+              .toUpperCase(),
+          )}
         </div>
         <div>
         <div style="font-weight:600; color:var(--navy-900);">${escapeHtml(s.full_name || "—")} ${s.student_id ? `<span class="text-secondary" style="font-weight:400;">(${escapeHtml(s.student_id)})</span>` : ""}</div>
@@ -157,6 +159,14 @@
         }
       </div>
     `;
+
+        if (photoUrl) {
+          const image = document.createElement("img");
+          image.src = photoUrl;
+          image.alt = "";
+          image.style.cssText = "width:100%;height:100%;object-fit:cover;";
+          row.querySelector(".student-photo").replaceChildren(image);
+        }
 
         row
           .querySelector('[data-action="suspend"]')

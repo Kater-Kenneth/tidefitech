@@ -5,6 +5,7 @@
 
 export const APP_NAME = "TIDEF ITECH LMS";
 export const STUDENT_ID_PREFIX = "TIDEF";
+export const LMS_SITE_URL = "https://www.tidefitech.com/lms";
 
 export const ROLES = Object.freeze({
   SUPER_ADMIN: "super_admin",
@@ -53,11 +54,9 @@ export const ROLE_HOME_PAGE = Object.freeze({
 // Public marketing site (outside the LMS) — used for the "Back to website" link
 export const MARKETING_SITE_URL = "https://www.tidefitech.com";
 
-// Passport uploads now go to Supabase Storage instead of Google Apps Script.
-// Create a public bucket named "passport-photos" in the Supabase dashboard for
-// the signup flow, and keep the existing private "profile-photos" bucket for
-// authenticated profile updates.
+// Both buckets are private. Migration 0021 configures the signup bucket and
+// its restricted upload/read policies.
 export const SUPABASE_STORAGE_BUCKETS = Object.freeze({
-  PASSPORT_PUBLIC: "passport-photos",
+  PASSPORT: "passport-photos",
   PROFILE_PHOTOS: "profile-photos",
 });

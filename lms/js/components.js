@@ -4,7 +4,7 @@
 import { logout } from "./auth.js";
 import { getInitials } from "./utils.js";
 import { ROLES } from "./config.js";
-import { toDriveImageUrl } from "./google-drive.js";
+import { resolvePhotoUrl } from "./google-drive.js";
 const NAV_BY_ROLE = {
   [ROLES.STUDENT]: [
     { section: "Learning" },
@@ -22,7 +22,11 @@ const NAV_BY_ROLE = {
       label: "Quizzes",
     },
     { href: "../student/exams.html", icon: "academic-cap", label: "Exams" },
-    { href: "../student/live-classes.html", icon: "video-camera", label: "Live Classes" },
+    {
+      href: "../student/live-classes.html",
+      icon: "video-camera",
+      label: "Live Classes",
+    },
     { section: "Community" },
     {
       href: "../student/community.html",
@@ -68,7 +72,11 @@ const NAV_BY_ROLE = {
       label: "Assignments",
     },
     { href: "../teacher/projects.html", icon: "rocket", label: "Projects" },
-    { href: "../teacher/live-classes.html", icon: "video-camera", label: "Live Classes" },
+    {
+      href: "../teacher/live-classes.html",
+      icon: "video-camera",
+      label: "Live Classes",
+    },
     {
       href: "../teacher/quizzes.html",
       icon: "question-mark-circle",
@@ -105,7 +113,11 @@ const NAV_BY_ROLE = {
       label: "Assignments",
     },
     { href: "../admin/projects.html", icon: "rocket", label: "Projects" },
-    { href: "../admin/live-classes.html", icon: "video-camera", label: "Live Classes" },
+    {
+      href: "../admin/live-classes.html",
+      icon: "video-camera",
+      label: "Live Classes",
+    },
     {
       href: "../admin/quizzes.html",
       icon: "question-mark-circle",
@@ -231,11 +243,7 @@ export function renderAppShell({ role, profile, pageTitle, activeHref }) {
           <div class="topbar-actions">
             <span class="badge badge-neutral">${roleLabel}</span>
             <div class="user-chip" title="${profile?.full_name || ""}">
-              <div class="avatar">${
-                profile?.profile_photo_url
-                  ? `<img src="${toDriveImageUrl(profile.profile_photo_url)}" alt="" />`
-                  : initials
-              }</div>
+              <div class="avatar">${initials}</div>
             </div>
           </div>
         </header>
@@ -244,6 +252,19 @@ export function renderAppShell({ role, profile, pageTitle, activeHref }) {
     </div>
   `,
   );
+
+  const avatar = document.querySelector(".user-chip .avatar");
+  if (profile?.profile_photo_url && avatar) {
+    resolvePhotoUrl(profile.profile_photo_url)
+      .then((photoUrl) => {
+        if (!photoUrl || !avatar.isConnected) return;
+        const image = document.createElement("img");
+        image.src = photoUrl;
+        image.alt = "";
+        avatar.replaceChildren(image);
+      })
+      .catch(() => {});
+  }
 
   document.getElementById("logout-btn").addEventListener("click", async () => {
     await logout();
