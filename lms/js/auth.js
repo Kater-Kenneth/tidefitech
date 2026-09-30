@@ -101,12 +101,7 @@ export async function requestPasswordReset(email) {
   const normalizedEmail = String(email || "").trim();
   if (!normalizedEmail) throw new Error("Email is required.");
 
-  const { error } = await supabase.auth.signInWithOtp({
-    email: normalizedEmail,
-    options: {
-      shouldCreateUser: false,
-    },
-  });
+  const { error } = await supabase.auth.resetPasswordForEmail(normalizedEmail);
 
   if (error) throw error;
 }
@@ -123,7 +118,7 @@ export async function verifyPasswordResetOtp(email, token) {
   const { data, error } = await supabase.auth.verifyOtp({
     email: normalizedEmail,
     token: normalizedToken,
-    type: "email",
+    type: "recovery",
   });
 
   if (error) throw error;

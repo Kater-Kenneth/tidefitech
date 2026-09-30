@@ -90,16 +90,17 @@ folder — it picks up everything under `supabase/migrations/` automatically.)
 </p>
 ```
 
-The registration page verifies this code with `verifyOtp`. 3. **Authentication → URL Configuration** — set:
+The registration page verifies this code with `verifyOtp`. In **Authentication
+→ Email Templates → Reset Password**, use `{{ .Token }}` for the code and
+remove `{{ .ConfirmationURL }}` if you want an OTP-only reset flow. The reset
+page verifies this token with the `recovery` OTP type. 3. **Authentication →
+URL Configuration** — set:
 
 - **Site URL**: wherever you'll host this (e.g. `https://lms.tidefitech.com`,
   or `http://localhost:3000` while testing locally)
-- **Redirect URLs**: add both `/verify-email.html` and
-  `/reset-password.html` under that same origin, since those are the
-  pages Supabase redirects to after password-reset email links. Signup
-  verification stays on `verify-email.html` and uses an OTP.
-
-Password-reset email templates can continue using Supabase's default link.
+- **Redirect URLs**: add `/verify-email.html` under that same origin for
+  signup verification. Password reset uses an OTP and does not require an
+  email redirect URL.
 
 ## 5. Run it locally
 
